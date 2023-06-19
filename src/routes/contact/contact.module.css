@@ -1,0 +1,74 @@
+/* Banner */
+.banner {
+  display: flex;
+  padding: 0 10%;
+  align-items: center;
+}
+
+.title {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 0;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Contact */
+.banner,
+.contacts {
+  background-color: #fff;
+}
+
+.contacts {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.contacts a {
+  text-decoration: none;
+  color: #333;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1.618;
+  max-height: 60vh;
+  max-height: 60dvh;
+  object-fit: cover;
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+}
+
+.contactContainer {
+  width: 80%;
+  margin: 20px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  column-gap: 50px;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 3px px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contactMethodTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 45px 0 25px 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.contactMethod {
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.mapFrame {
+  width: 100%;
+  aspect-ratio: 1.618;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 3px px 3px rgba(0, 0, 0, 0.1);
+}
