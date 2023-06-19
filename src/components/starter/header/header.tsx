@@ -1,34 +1,34 @@
-import { component$ } from '@builder.io/qwik';
-import { QwikLogo } from '../icons/qwik';
-import styles from './header.module.css';
+import { component$ } from "@builder.io/qwik";
+import styles from "./header.module.css";
 
 export default component$(() => {
   return (
-    <header class={styles.header}>
-      <div class={['container', styles.wrapper]}>
-        <div class={styles.logo}>
-          <a href="/" title="qwik">
-            <QwikLogo height={50} width={143} />
-          </a>
-        </div>
-        <ul>
-          <li>
-            <a href="https://qwik.builder.io/docs/components/overview/" target="_blank">
-              Docs
-            </a>
-          </li>
-          <li>
-            <a href="https://qwik.builder.io/examples/introduction/hello-world/" target="_blank">
-              Examples
-            </a>
-          </li>
-          <li>
-            <a href="https://qwik.builder.io/tutorial/welcome/overview/" target="_blank">
-              Tutorials
-            </a>
-          </li>
-        </ul>
+    <nav class={styles.nav}>
+      <input type="checkbox" class={styles.hiddenCheckbox} />
+      <div class={styles.hamburger}>
+        <div class={styles.bar}></div>
       </div>
-    </header>
+      <a href="/">
+        <h1 class={styles.icon}>Skylight</h1>
+      </a>
+      <div class={styles.blur}></div>
+      <ul class={styles.menu}>
+        <li class={styles.menuItem}>
+          <a href="index.html" class={styles.link}>
+            首頁
+          </a>
+        </li>
+        <li class={styles.menuItem}>
+          <a href="example.html" class={styles.link}>
+            裝修案例
+          </a>
+        </li>
+        <li class={styles.menuItem}>
+          <a href="contact.html" class={styles.link}>
+            聯絡我們
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 });

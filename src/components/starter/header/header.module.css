@@ -1,44 +1,173 @@
-.wrapper {
+/* Nav Bar */
+ .nav {
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 10px;
+  height: 50px;
+  box-shadow: 0 13px 13px -10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 999;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+ .icon {
+  color: rgb(50, 50, 50);
+  float: left;
+  padding: 0 10px 0 20px;
+  margin: 0;
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 550;
 }
 
-.logo {
-  display: inline-block;
-}
-.logo a {
-  display: block;
-}
-
-.header ul {
-  margin: 0;
-  padding: 0;
+ .menu {
   list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.header li {
-  display: none;
   margin: 0;
   padding: 0;
-  font-size: 0.7rem;
 }
 
-.header li a {
-  color: white;
-  display: inline-block;
-  padding: 0;
+ .menuItem {
+  position: relative;
+  float: left;
+}
+
+ .link {
+  color: #333;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+  padding: 0 20px;
   text-decoration: none;
 }
 
-.header li a:hover {
-  color: var(--qwik-light-blue);
+ .link::after {
+  position: absolute;
+  content: "";
+  left: 15px;
+  right: 15px;
+  bottom: 10px;
+  scale: 0;
+  border-bottom: 1px solid #000;
+  transition: all 0.5s;
 }
 
-@media (min-width: 450px) {
-  .header li {
-    display: inline-block;
+ .link:hover:after {
+  scale: 1;
+  transform: translateY(0);
+}
+
+.hiddenCheckbox {
+  display: none;
+}
+
+ .hamburger {
+  content: "";
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+
+   .icon {
+    padding: none;
+    font-weight: 700;
   }
+
+  .hiddenCheckbox {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    display: block;
+    height: 70px;
+    width: 70px;
+  }
+
+   .blur {
+    display: none;
+  }
+
+   .hamburger::before,  .hamburger .bar,  .hamburger::after {
+    appearance: none;
+    display: block;
+    content: "";
+    border-bottom: 2.5px solid #000;
+    width: 30px;
+    height: 0px;
+    margin: 3px;
+    transition: opacity 0.6s;
+  }
+
+   .hamburger::before {
+    transition: transform 0.9s;
+  }
+
+   .hamburger::after {
+    transition: transform 0.6s;
+  }
+
+  .hiddenCheckbox:checked ~ .hamburger .bar {
+    opacity: 0;
+  }
+
+  .hiddenCheckbox:checked ~ .hamburger::before {
+    transform: translate(0px, 8px) rotate(225deg);
+  }
+
+  .hiddenCheckbox:checked ~ .hamburger::after {
+    transform: translate(0px, -8px) rotate(-225deg);
+  }
+
+   .menu {
+    position: fixed;
+    left: 100%;
+    width: 60%;
+    top: 70px;
+    bottom: 0;
+    padding-left: 15px;
+    background-color: rgba(175, 238, 238, 0.97);
+    transition: transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hiddenCheckbox:checked ~ .blur {
+    display: unset;
+  }
+
+  .hiddenCheckbox:checked ~ .menu {
+    transform: translateX(-100%);
+  }
+
+   .menuItem {
+    float: none;
+  }
+
+   .link {
+    color: rgb(50, 50, 50);
+    font-size: 1.2rem;
+    margin: 7.5px;
+  }
+
+   .link::after {
+    border-bottom-color: rgb(50, 50, 50);
+    transform: translateY(0px);
+  }
+
 }

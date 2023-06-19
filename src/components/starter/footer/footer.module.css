@@ -1,23 +1,26 @@
-.anchor {
-  color: white !important;
-  display: block;
-  font-size: 0.8rem;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1.5;
+.footer {
+  background-color: rgb(250, 250, 250);
+  color: rgb(100, 100, 100);
+  padding: 30px 10%;
 }
 
-.anchor span:not(.spacer) {
-  display: block;
+ .title {
+  text-align: left;
+  color: rgb(100, 100, 100);
 }
 
-.spacer {
-  display: none;
-  padding: 0 15px;
+.line {
+  opacity: 30%;
 }
 
-@media screen and (min-width: 768px) {
-  .anchor span {
-    display: inline !important;
-  }
+ .extrainfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  margin: 3px 0;
+  font-size: 0.75rem;
 }
