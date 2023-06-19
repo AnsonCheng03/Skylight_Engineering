@@ -1,0 +1,86 @@
+:root {
+  --hero-img-aspect-ratio: 1.618;
+}
+
+.hero {
+  width: 100%;
+  height: calc(85vw / var(--hero-img-aspect-ratio) + 40px);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.heroSlideshow {
+  position: relative;
+  width: 100%;
+}
+
+.heroSlideshowSlide {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 7.5%;
+  right: 7.5%;
+  aspect-ratio: var(--hero-img-aspect-ratio);
+  opacity: 0;
+  transform: translateX(200%);
+  transition: opacity 0.2s;
+}
+
+.heroSlideshowSlide[previous], .heroSlideshowSlide[next] {
+  opacity: 0.8;
+  transition: transform 0.5s;
+}
+
+.heroSlideshowSlide[previous] {
+  transform: translateX(-102%);
+
+}
+
+.heroSlideshowSlide[next] {
+  transform: translateX(102%);
+}
+
+.heroSlideshowSlide[active] {
+  transform: translateX(0);
+  transition: transform 0.5s;
+  opacity: 1;
+  z-index: 99;
+}
+
+.heroSlideshowSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.08);
+}
+
+.heroSlideshowControls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSlideshowControlsDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSlideshowControlsDotsDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.heroSlideshowControlsDotsDot:hover,
+.heroSlideshowControlsDotsDot[active] {
+  background-color: rgba(0, 0, 0, 0.5);
+}

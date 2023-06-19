@@ -14,17 +14,17 @@ export default component$(() => {
       <div class={styles.blur}></div>
       <ul class={styles.menu}>
         <li class={styles.menuItem}>
-          <a href="index.html" class={styles.link}>
+          <a href="/" class={styles.link}>
             首頁
           </a>
         </li>
         <li class={styles.menuItem}>
-          <a href="example.html" class={styles.link}>
+          <a href="/example" class={styles.link}>
             裝修案例
           </a>
         </li>
         <li class={styles.menuItem}>
-          <a href="contact.html" class={styles.link}>
+          <a href="/contact" class={styles.link}>
             聯絡我們
           </a>
         </li>

@@ -1,0 +1,47 @@
+[
+  {
+    "path": "/cases/apartment/西營盤俊傑花園",
+    "Images": ["IMG_8714.jpg", "IMG_8724.jpg", "IMG_8717.jpg"],
+    "type": "住宅",
+    "name": "西營盤俊傑花園",
+    "data": "600呎",
+    "Cover": "IMG_8587.jpg",
+    "Highlight": ["IMG_8724.jpg"],
+    "Slideshow": ["IMG_8717.jpg"],
+    "Text": "2022年 實用面積~600尺 全屋裝修"
+  },
+  {
+    "path": "/cases/apartment/何文田俊民苑",
+    "Images": ["DSC07705.jpg", "DSC07717.jpg", "DSC07748-1.jpg"],
+    "type": "住宅",
+    "name": "何文田俊民苑",
+    "data": "600呎",
+    "Cover": "DSC07723.jpg",
+    "Highlight": ["DSC07717.jpg"],
+    "Slideshow": ["DSC07748-1.jpg"],
+    "Text": "2022年 實用面積~600尺 全屋裝修"
+  },
+  {
+    "path": "/cases/store/ORION荔枝角商鋪",
+    "Images": [
+      "DSC06972.jpg",
+      "DSC07005.jpg",
+      "DSC07029.jpg",
+      "DSC06981.jpg",
+      "DSC07008.jpg",
+      "DSC07034.jpg",
+      "DSC06991 copy.jpg",
+      "DSC07012.jpg",
+      "DSC07088.jpg",
+      "DSC07001.jpg",
+      "DSC07019.jpg",
+      "DSC07003.jpg"
+    ],
+    "type": "商鋪",
+    "name": "ORION荔枝角商鋪",
+    "Cover": "DSC07034.jpg",
+    "Highlight": ["DSC07005.jpg", "DSC07034.jpg"],
+    "Slideshow": ["DSC07001.jpg", "DSC07003.jpg"],
+    "Text": "2021年 實用面積~1700尺 雙層全鋪裝修"
+  }
+]
