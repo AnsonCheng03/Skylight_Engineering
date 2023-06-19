@@ -35,7 +35,7 @@ jobs:
           node-version: 16
 
       - name: 🚚 Get latest code
-        uses: actions/checkout@v2.5.0
+        uses: actions/checkout@v3
 
       - name: Clean install dependencies
         run: yarn
@@ -46,5 +46,5 @@ jobs:
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./dist
