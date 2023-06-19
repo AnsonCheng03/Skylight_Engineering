@@ -1,5 +1,5 @@
 /* Nav Bar */
- .nav {
+.nav {
   font-family: "Avenir Next", "Avenir", sans-serif;
   position: sticky;
   top: 0;
@@ -13,7 +13,7 @@
   user-select: none;
 }
 
- .icon {
+.icon {
   color: rgb(50, 50, 50);
   float: left;
   padding: 0 10px 0 20px;
@@ -26,18 +26,18 @@
   font-weight: 550;
 }
 
- .menu {
+.menu {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
- .menuItem {
+.menuItem {
   position: relative;
   float: left;
 }
 
- .link {
+.link {
   color: #333;
   display: block;
   font-size: 16px;
@@ -47,7 +47,7 @@
   text-decoration: none;
 }
 
- .link::after {
+.link::after {
   position: absolute;
   content: "";
   left: 15px;
@@ -58,7 +58,7 @@
   transition: all 0.5s;
 }
 
- .link:hover:after {
+.link:hover:after {
   scale: 1;
   transform: translateY(0);
 }
@@ -67,7 +67,7 @@
   display: none;
 }
 
- .hamburger {
+.hamburger {
   content: "";
   float: right;
   display: flex;
@@ -81,8 +81,7 @@
 }
 
 @media (max-width: 768px) {
-
-   .icon {
+  .icon {
     padding: none;
     font-weight: 700;
   }
@@ -98,11 +97,13 @@
     width: 70px;
   }
 
-   .blur {
+  .blur {
     display: none;
   }
 
-   .hamburger::before,  .hamburger .bar,  .hamburger::after {
+  .hamburger::before,
+  .hamburger .bar,
+  .hamburger::after {
     appearance: none;
     display: block;
     content: "";
@@ -113,11 +114,11 @@
     transition: opacity 0.6s;
   }
 
-   .hamburger::before {
+  .hamburger::before {
     transition: transform 0.9s;
   }
 
-   .hamburger::after {
+  .hamburger::after {
     transition: transform 0.6s;
   }
 
@@ -133,7 +134,7 @@
     transform: translate(0px, -8px) rotate(-225deg);
   }
 
-   .menu {
+  .menu {
     position: fixed;
     left: 100%;
     width: 60%;
@@ -155,19 +156,18 @@
     transform: translateX(-100%);
   }
 
-   .menuItem {
+  .menuItem {
     float: none;
   }
 
-   .link {
+  .link {
     color: rgb(50, 50, 50);
     font-size: 1.2rem;
     margin: 7.5px;
   }
 
-   .link::after {
+  .link::after {
     border-bottom-color: rgb(50, 50, 50);
     transform: translateY(0px);
   }
-
 }

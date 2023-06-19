@@ -4,7 +4,7 @@
   padding: 30px 10%;
 }
 
- .title {
+.title {
   text-align: left;
   color: rgb(100, 100, 100);
 }
@@ -13,7 +13,7 @@
   opacity: 30%;
 }
 
- .extrainfo {
+.extrainfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
