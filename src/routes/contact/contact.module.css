@@ -59,6 +59,11 @@
   color: rgba(0, 0, 0, 0.85);
 }
 
+.contactMethodLink {
+  color: black;
+  text-decoration: none;
+}
+
 .contactMethod {
   word-wrap: break-word;
   width: 100%;

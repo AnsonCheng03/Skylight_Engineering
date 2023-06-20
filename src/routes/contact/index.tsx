@@ -16,12 +16,17 @@ export default component$(() => {
           <div>
             <div>
               <h3 class={styles.contactMethodTitle}>電話</h3>
-              <a href="tel:+85290732506">9073 2506</a>
+              <a href="tel:+85290732506" class={styles.contactMethodLink}>
+                9073 2506
+              </a>
             </div>
             <div>
               <h3 class={styles.contactMethodTitle}>電郵</h3>
               <p class={styles.contactMethod}>
-                <a href="mailto:contact@skylightengineering.com.hk">
+                <a
+                  href="mailto:contact@skylightengineering.com.hk"
+                  class={styles.contactMethodLink}
+                >
                   contact@skylightengineering.com.hk
                 </a>
               </p>
@@ -32,6 +37,7 @@ export default component$(() => {
                 <a
                   href="https://www.instagram.com/skylight_engg_901/"
                   target="_blank"
+                  class={styles.contactMethodLink}
                 >
                   @skylight_engg_901
                 </a>
