@@ -16,7 +16,7 @@ export default component$(() => {
         <li class={styles.menuItem}>
           <a
             href={
-              process.env.NODE_ENV !== "development"
+              process.env.NODE_ENV === "development"
                 ? "/"
                 : "/Skylight_Engineering"
             }
@@ -28,7 +28,7 @@ export default component$(() => {
         <li class={styles.menuItem}>
           <a
             href={
-              process.env.NODE_ENV !== "development"
+              process.env.NODE_ENV === "development"
                 ? "/about-us"
                 : "/Skylight_Engineering/about-us"
             }
@@ -40,7 +40,7 @@ export default component$(() => {
         <li class={styles.menuItem}>
           <a
             href={
-              process.env.NODE_ENV !== "development"
+              process.env.NODE_ENV === "development"
                 ? "/contact"
                 : "/Skylight_Engineering/contact"
             }
