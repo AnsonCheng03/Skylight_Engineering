@@ -1,5 +1,5 @@
 .examples {
-  padding: 50px 0;
+  padding: 0 0 50px 0;
 }
 
 .cards {
@@ -47,7 +47,7 @@
   box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.08);
 }
 
-.card img {
+.cardImg {
   width: 100%;
   aspect-ratio: 1.618;
   object-fit: cover;
@@ -56,7 +56,7 @@
   transition: all 0.5s;
 }
 
-.card:hover img {
+.card:hover .cardImg {
   box-shadow: none;
   border-radius: 0;
 }
@@ -67,7 +67,7 @@
   width: 90%;
 }
 
-.cardContent h3 {
+.photoTitle {
   display: inline-block;
   color: #05135d;
   border: 1px solid #05135d;
@@ -84,14 +84,14 @@
   white-space: nowrap;
 }
 
-.cardContent .photo-type {
+.cardContent .photoType {
   color: #05135d;
   border: 1px solid #05135d;
   background-color: transparent;
   border-radius: 10px;
 }
 
-.cardContent .photo-name {
+.cardContent .photoName {
   background-color: hsl(217, 84%, 90%);
   color: #05135d;
   border: 1px solid transparent;

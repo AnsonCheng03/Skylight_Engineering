@@ -23,11 +23,26 @@ export default component$(({ photos }: any) => {
                   nav(url.href);
                 }}
               >
-                <img src={photo.path + "/" + photoName} />
+                <img
+                  src={photo.path + "/" + photoName}
+                  class={styles.cardImg}
+                />
                 <div class={styles.cardContent}>
-                  {photo.type && <h3 class={styles.photoType}>{photo.type}</h3>}
-                  {photo.data && <h3 class={styles.photoData}>{photo.data}</h3>}
-                  {photo.name && <h3 class={styles.photoName}>{photo.name}</h3>}
+                  {photo.type && (
+                    <h3 class={[styles.photoType, styles.photoTitle]}>
+                      {photo.type}
+                    </h3>
+                  )}
+                  {photo.data && (
+                    <h3 class={[styles.photoData, styles.photoTitle]}>
+                      {photo.data}
+                    </h3>
+                  )}
+                  {photo.name && (
+                    <h3 class={[styles.photoName, styles.photoTitle]}>
+                      {photo.name}
+                    </h3>
+                  )}
                 </div>
               </div>
             ));
