@@ -22,7 +22,8 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  overscroll-behavior: none;
+  overscroll-behavior: none !important;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
   min-height: 100vh;
   background-color: #f5f6fa;
   color: #3f424b;
+  overscroll-behavior: none !important;
 }
 
 h2 {
