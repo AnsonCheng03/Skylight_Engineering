@@ -700,7 +700,7 @@
   "platform": {
     "qwik": "1.1.5",
     "vite": "",
-    "rollup": "3.25.1",
+    "rollup": "3.25.3",
     "env": "node",
     "os": "linux",
     "node": "16.20.0"
