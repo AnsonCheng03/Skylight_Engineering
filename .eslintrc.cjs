@@ -37,5 +37,13 @@ module.exports = {
     "no-console": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/consistent-type-imports": "warn",
+    "no-unused-vars": [
+      "error", // or "error"
+      {
+        argsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
+    ],
   },
 };
