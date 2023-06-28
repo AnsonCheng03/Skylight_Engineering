@@ -10,7 +10,7 @@ export default component$(({ photos }: any) => {
   const aspectRatioStyle = useSignal(1);
 
   const images = photos.flatMap((photo: any) =>
-    photo.Slideshow.map((slide: any) => photo.path + "/" + slide)
+    photo.Slideshow?.map((slide: any) => photo.path + "/" + slide)
   );
 
   const update_dots = $(() => {
@@ -135,7 +135,7 @@ export default component$(({ photos }: any) => {
             {[
               ...Array(images.length <= 4 ? Math.ceil(6 / images.length) : 1),
             ].map((_, repeatIndex) => {
-              return images.map((image, index) => {
+              return images.map((image: string, index: number) => {
                 return (
                   <img
                     src={image}
@@ -154,7 +154,7 @@ export default component$(({ photos }: any) => {
         <div class={styles.heroSlideshowControls}>
           <div class={styles.heroSlideshowControlsDotsContainer}>
             <div class={styles.heroSlideshowControlsDots}>
-              {images.map((_, index) => {
+              {images.map((_: any, index: number) => {
                 return (
                   <div
                     class={
