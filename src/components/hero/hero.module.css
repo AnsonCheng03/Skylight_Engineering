@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 
-.heroSlideshowControlsDots .dot.active {
+.heroSlideshowControlsDots .active {
   background-color: #000;
 }
 

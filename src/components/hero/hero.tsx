@@ -15,13 +15,13 @@ export default component$(({ photos }: any) => {
   const autoplayInterval = useSignal<any>(undefined);
   const aspectRatioStyle = useSignal(1);
 
-  const images = useSignal<[string, boolean][]>([]);
+  const images = useSignal<string[]>([]);
 
   useTask$(() => {
     photos.forEach((photo: any) => {
       photo.Slideshow.forEach((photoName: any) => {
         // path, isActive
-        images.value.push([photo.path + "/" + photoName, false]);
+        images.value.push(photo.path + "/" + photoName);
       });
     });
   });
@@ -34,11 +34,10 @@ export default component$(({ photos }: any) => {
     const thirdImageId = thirdImage?.id;
     //remove active class from all dots
     dots.forEach((dot) => {
-      dot.classList.remove("active");
+      dot.classList.remove(styles.active);
     });
     //add active class to the dot with the same id as the 3rd image
-    if (typeof thirdImageId === "number")
-      dots[thirdImageId].classList.add("active");
+    if (thirdImageId) dots[parseInt(thirdImageId)].classList.add(styles.active);
   });
 
   //slideshow controls
@@ -49,7 +48,6 @@ export default component$(({ photos }: any) => {
     if (firstChild)
       document.querySelector(".hero-slideshow")?.appendChild(firstChild);
 
-    console.log(document.querySelector(".hero-slideshow"));
     update_dots();
   });
 
@@ -115,7 +113,7 @@ export default component$(({ photos }: any) => {
   useVisibleTask$(() => {
     if (images.value[0] === undefined) return;
     const img = new Image();
-    img.src = images.value[0][0];
+    img.src = images.value[0];
     img.onload = () => {
       aspectRatioStyle.value = img.width / img.height;
     };
@@ -139,7 +137,7 @@ export default component$(({ photos }: any) => {
         }}
       >
         {images.value.length === 1 ? (
-          <img src={images.value[0][0]} alt={images.value[0][0]} />
+          <img src={images.value[0]} alt={images.value[0]} />
         ) : (
           <>
             {[
@@ -152,23 +150,15 @@ export default component$(({ photos }: any) => {
               return images.value.map((image, index) => {
                 return (
                   <img
-                    src={image[0]}
-                    alt={image[0]}
-                    id={repeatIndex + "_" + index}
+                    src={image}
+                    alt={image}
+                    id={index.toString()}
                     key={repeatIndex + index}
                     class={styles.heroSlideshowSlide}
                   />
                 );
               });
             })}
-
-            {/* // for (let i = 2; i < images.value.length; i++)
-          //   document
-          //     .querySelector(".hero-slideshow")
-          //     .appendChild(
-          //       document.querySelector(".hero-slideshow").firstElementChild
-          //     );
-          // break; */}
           </>
         )}
       </div>
@@ -178,7 +168,11 @@ export default component$(({ photos }: any) => {
             {images.value.map((_, index) => {
               return (
                 <div
-                  class={index === 0 ? [styles.dot, styles.active] : styles.dot}
+                  class={
+                    index === 2
+                      ? [styles.dot, styles.active, "dot"]
+                      : [styles.dot, "dot"]
+                  }
                   key={index}
                   id={index.toString()}
                   onClick$={(e: any) => {
