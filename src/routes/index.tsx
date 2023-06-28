@@ -1,14 +1,5 @@
-import {
-  Resource,
-  component$,
-  useTask$,
-  useVisibleTask$,
-} from "@builder.io/qwik";
-import {
-  useLocation,
-  type DocumentHead,
-  routeLoader$,
-} from "@builder.io/qwik-city";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { type DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
 import AboutUs from "~/components/about-us/aboutUs";
 import Examples from "~/components/examples/examples";
 import Hero from "~/components/hero/hero";
@@ -48,6 +39,3 @@ export const head: DocumentHead = {
     },
   ],
 };
-function useEndpoint<T>() {
-  throw new Error("Function not implemented.");
-}
