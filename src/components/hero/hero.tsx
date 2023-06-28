@@ -84,6 +84,8 @@ export default component$(({ photos }: any) => {
     if (changingDot.value === true) return;
     changingDot.value = true;
 
+    const originalAutoplay = autoplay.value;
+
     //pause autoplay
     stop_autoplay();
 
@@ -95,9 +97,6 @@ export default component$(({ photos }: any) => {
       activeDot
     );
 
-    //if the dot that was clicked is the active dot, return
-    if (dotId === activeDotId) return;
-
     //perform next_slide() as many times as the difference between the dotId and activeDotId
     const difference = dotId - activeDotId;
     for (let i = 0; i < Math.abs(difference); i++)
@@ -105,7 +104,7 @@ export default component$(({ photos }: any) => {
 
     //restart autoplay and update changingDot
     setTimeout(() => {
-      start_autoplay();
+      if (originalAutoplay) start_autoplay();
       changingDot.value = false;
     }, 300 * Math.abs(difference));
   });
@@ -162,37 +161,43 @@ export default component$(({ photos }: any) => {
           </>
         )}
       </div>
-      <div class={styles.heroSlideshowControls}>
-        <div class={styles.heroSlideshowControlsDotsContainer}>
-          <div class={styles.heroSlideshowControlsDots}>
-            {images.value.map((_, index) => {
-              return (
-                <div
-                  class={
-                    index === 2
-                      ? [styles.dot, styles.active, "dot"]
-                      : [styles.dot, "dot"]
-                  }
-                  key={index}
-                  id={index.toString()}
-                  onClick$={(e: any) => {
-                    clickOnDots(e.target);
-                  }}
-                ></div>
-              );
-            })}
+      {images.value.length > 1 && (
+        <div class={styles.heroSlideshowControls}>
+          <div class={styles.heroSlideshowControlsDotsContainer}>
+            <div class={styles.heroSlideshowControlsDots}>
+              {images.value.map((_, index) => {
+                return (
+                  <div
+                    class={
+                      images.value.length === 2
+                        ? index === 0
+                          ? [styles.dot, styles.active, "dot"]
+                          : [styles.dot, "dot"]
+                        : index === 2
+                        ? [styles.dot, styles.active, "dot"]
+                        : [styles.dot, "dot"]
+                    }
+                    key={index}
+                    id={index.toString()}
+                    onClick$={(e: any) => {
+                      clickOnDots(e.target);
+                    }}
+                  ></div>
+                );
+              })}
+            </div>
+          </div>
+          <div
+            class={styles.heroSlideshowControlsPlayButton}
+            onClick$={() => {
+              if (autoplay.value === false) start_autoplay();
+              else stop_autoplay();
+            }}
+          >
+            {autoplay.value === true ? <BsPause /> : <BsPlay />}
           </div>
         </div>
-        <div
-          class={styles.heroSlideshowControlsPlayButton}
-          onClick$={() => {
-            if (autoplay.value === false) start_autoplay();
-            else stop_autoplay();
-          }}
-        >
-          {autoplay.value === true ? <BsPause /> : <BsPlay />}
-        </div>
-      </div>
+      )}
     </section>
   ) : (
     <></>

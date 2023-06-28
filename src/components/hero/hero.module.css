@@ -110,6 +110,7 @@
 
 .single {
   transform: none;
+  margin-bottom: 50px;
 }
 
 .single .heroSlideshow {
