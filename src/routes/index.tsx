@@ -10,7 +10,7 @@ export default component$(() => {
     // if is in github pages, append the repo name to the image path
     if (process.env.NODE_ENV !== "development") {
       imageSource.forEach((image) => {
-        image.path = "/dist" + image.path;
+        image.path = "/Skylight_Engineering" + image.path;
       });
     }
   });

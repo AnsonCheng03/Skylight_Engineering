@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: 'https://skylightengineering.com.hk',
+        origin: 'https://skylightengineering.com.hk/',
       }),
     ],
   };

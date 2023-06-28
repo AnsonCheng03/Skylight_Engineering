@@ -15,7 +15,11 @@ export default component$(() => {
       <ul class={styles.menu}>
         <li class={styles.menuItem}>
           <a
-            href={process.env.NODE_ENV !== "development" ? "/" : "/dist"}
+            href={
+              process.env.NODE_ENV !== "development"
+                ? "/"
+                : "/Skylight_Engineering"
+            }
             class={styles.link}
           >
             首頁
@@ -26,7 +30,7 @@ export default component$(() => {
             href={
               process.env.NODE_ENV !== "development"
                 ? "/about-us"
-                : "/dist/about-us"
+                : "/Skylight_Engineering/about-us"
             }
             class={styles.link}
           >
@@ -38,7 +42,7 @@ export default component$(() => {
             href={
               process.env.NODE_ENV !== "development"
                 ? "/contact"
-                : "/dist/contact"
+                : "/Skylight_Engineering/contact"
             }
             class={styles.link}
           >
