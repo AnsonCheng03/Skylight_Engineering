@@ -1,1 +1,0 @@
-import{Q as r,o as e,S as u}from"./q-b0cb0010.js";import{d as n,f as l}from"./q-d9bfdedf.js";const o=()=>n(r,{children:[l("head",null,null,[l("meta",null,{charSet:"utf-8"},null,3,null),l("link",null,{rel:"manifest",href:"/manifest.json"},null,3,null)],3,null),l("body",null,{lang:"en"},[n(e,null,3,"35_0"),n(u,null,3,"35_1")],1,null)]},1,"35_2");export{o as s_3sccYCDd1Z0};
