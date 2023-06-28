@@ -72,7 +72,7 @@ export default component$(({ photos }: any) => {
     if (typeof autoplayInterval.value !== "undefined")
       clearInterval(autoplayInterval.value);
     //start autoplay
-    autoplayInterval.value = setInterval(next_slide, 3000);
+    autoplayInterval.value = setInterval(next_slide, 3500);
   });
 
   const stop_autoplay = $(() => {
@@ -90,7 +90,7 @@ export default component$(({ photos }: any) => {
     // find the index of the dot that was clicked
     const dotId = Array.from(dot.parentElement.children).indexOf(dot);
     //get the id of the active dot
-    const activeDot = document.querySelector(".dot.active");
+    const activeDot = document.querySelector(`.${styles.active}`);
     const activeDotId = Array.from(dot.parentElement.children).indexOf(
       activeDot
     );
