@@ -15,7 +15,6 @@ export default component$(() => {
     }
   });
 
-  console.log("imageSource", imageSource);
   return (
     <>
       <Hero photos={imageSource} />
@@ -26,11 +25,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "天晴工程有限公司",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "天晴工程有限公司",
     },
   ],
 };
