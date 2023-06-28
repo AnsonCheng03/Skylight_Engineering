@@ -17,7 +17,7 @@ export default component$(({ photos }: any) => {
                 key={photo.id}
                 onClick$={() => {
                   const url = new URL(loc.url.href);
-                  url.pathname = "/example";
+                  url.pathname = "/Skylight_Engineering/example";
                   url.searchParams.set("type", photo.type);
                   url.searchParams.set("name", photo.name);
                   nav(url.href);
