@@ -1,18 +1,33 @@
-import { component$, useTask$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import imageSource from "~/Images.json";
+import {
+  Resource,
+  component$,
+  useTask$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import {
+  useLocation,
+  type DocumentHead,
+  routeLoader$,
+} from "@builder.io/qwik-city";
 import AboutUs from "~/components/about-us/aboutUs";
 import Examples from "~/components/examples/examples";
 import Hero from "~/components/hero/hero";
 
+export const useImageSource = routeLoader$(async (requestEvent) => {
+  const res = await fetch(
+    requestEvent.url.origin + "/Skylight_Engineering/Images.json"
+  );
+  const data = await res.json();
+
+  return data;
+});
+
 export default component$(() => {
-  useTask$(() => {
-    // if is in github pages, append the repo name to the image path
-    if (process.env.NODE_ENV !== "development") {
-      imageSource.forEach((image) => {
-        image.path = "/Skylight_Engineering" + image.path;
-      });
-    }
+  const imageSource = useImageSource().value;
+
+  useVisibleTask$(() => {
+    // scroll to top when navigating to this page
+    window.scrollTo(0, 0);
   });
 
   return (
@@ -33,3 +48,6 @@ export const head: DocumentHead = {
     },
   ],
 };
+function useEndpoint<T>() {
+  throw new Error("Function not implemented.");
+}

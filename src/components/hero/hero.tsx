@@ -1,11 +1,5 @@
 /* eslint-disable qwik/jsx-img */
-import {
-  $,
-  component$,
-  useSignal,
-  useTask$,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { BsPause, BsPlay } from "@qwikest/icons/bootstrap";
 import styles from "./hero.module.css";
 
@@ -15,16 +9,9 @@ export default component$(({ photos }: any) => {
   const autoplayInterval = useSignal<any>(undefined);
   const aspectRatioStyle = useSignal(1);
 
-  const images = useSignal<string[]>([]);
-
-  useTask$(() => {
-    photos.forEach((photo: any) => {
-      photo.Slideshow.forEach((photoName: any) => {
-        // path, isActive
-        images.value.push(photo.path + "/" + photoName);
-      });
-    });
-  });
+  const images = photos.flatMap((photo: any) =>
+    photo.Slideshow.map((slide: any) => photo.path + "/" + slide)
+  );
 
   const update_dots = $(() => {
     const dots = document.querySelectorAll(".dot");
@@ -110,24 +97,30 @@ export default component$(({ photos }: any) => {
   });
 
   useVisibleTask$(() => {
-    if (images.value[0] === undefined) return;
+    // remove all intervals when load
+    const interval_id = window.setInterval(function () {},
+    Number.MAX_SAFE_INTEGER);
+    if (interval_id)
+      for (let i = 1; i < interval_id; i++) {
+        window.clearInterval(i);
+      }
+
+    if (images[0] === undefined) return;
     const img = new Image();
-    img.src = images.value[0];
+    img.src = images[0];
     img.onload = () => {
       aspectRatioStyle.value = img.width / img.height;
     };
 
-    if (images.value.length > 1) {
+    if (images.length > 1) {
       update_dots();
       start_autoplay();
     }
   });
 
-  return images.value.length > 0 ? (
+  return images.length > 0 ? (
     <section
-      class={
-        images.value.length === 1 ? [styles.hero, styles.single] : styles.hero
-      }
+      class={images.length === 1 ? [styles.hero, styles.single] : styles.hero}
     >
       <div
         class={[styles.heroSlideshow, "hero-slideshow"]}
@@ -135,18 +128,14 @@ export default component$(({ photos }: any) => {
           aspectRatio: aspectRatioStyle.value,
         }}
       >
-        {images.value.length === 1 ? (
-          <img src={images.value[0]} alt={images.value[0]} />
+        {images.length === 1 ? (
+          <img src={images[0]} alt={images[0]} />
         ) : (
           <>
             {[
-              ...Array(
-                images.value.length <= 4
-                  ? Math.ceil(6 / images.value.length)
-                  : 1
-              ),
+              ...Array(images.length <= 4 ? Math.ceil(6 / images.length) : 1),
             ].map((_, repeatIndex) => {
-              return images.value.map((image, index) => {
+              return images.map((image, index) => {
                 return (
                   <img
                     src={image}
@@ -161,15 +150,15 @@ export default component$(({ photos }: any) => {
           </>
         )}
       </div>
-      {images.value.length > 1 && (
+      {images.length > 1 && (
         <div class={styles.heroSlideshowControls}>
           <div class={styles.heroSlideshowControlsDotsContainer}>
             <div class={styles.heroSlideshowControlsDots}>
-              {images.value.map((_, index) => {
+              {images.map((_, index) => {
                 return (
                   <div
                     class={
-                      images.value.length === 2
+                      images.length === 2
                         ? index === 0
                           ? [styles.dot, styles.active, "dot"]
                           : [styles.dot, "dot"]
@@ -200,6 +189,6 @@ export default component$(({ photos }: any) => {
       )}
     </section>
   ) : (
-    <></>
+    <>{images.length}</>
   );
 });
