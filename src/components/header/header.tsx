@@ -15,9 +15,9 @@ export default component$(() => {
       <div class={styles.blur}></div>
       <ul class={styles.menu}>
         <li class={styles.menuItem}>
-          <a href={"/Skylight_Engineering/"} class={styles.link}>
+          <Link href={"/Skylight_Engineering/"} class={styles.link}>
             首頁
-          </a>
+          </Link>
         </li>
         <li class={styles.menuItem}>
           <Link href={"/Skylight_Engineering/example"} class={styles.link}>
