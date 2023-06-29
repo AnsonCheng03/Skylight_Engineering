@@ -9,7 +9,7 @@ export default component$(() => {
       <div class={styles.hamburger}>
         <div class={styles.bar}></div>
       </div>
-      <Link href="/">
+      <Link href="/Skylight_Engineering/">
         <h1 class={styles.icon}>Skylight</h1>
       </Link>
       <div class={styles.blur}></div>
