@@ -26,11 +26,6 @@ export const useImageSource = routeLoader$(async (requestEvent) => {
 export default component$(() => {
   const imageSource = useImageSource().value;
 
-  useVisibleTask$(() => {
-    // scroll to top when navigating to this page
-    window.scrollTo(0, 0);
-  });
-
   return (
     <>
       <Hero photos={imageSource} />
