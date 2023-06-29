@@ -1,5 +1,12 @@
 /* eslint-disable qwik/jsx-img */
-import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import type {
+  CSSProperties} from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useSignal,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { BsPause, BsPlay } from "@qwikest/icons/bootstrap";
 import styles from "./hero.module.css";
 
@@ -124,9 +131,11 @@ export default component$(({ photos }: any) => {
     >
       <div
         class={[styles.heroSlideshow, "hero-slideshow"]}
-        style={{
-          aspectRatio: aspectRatioStyle.value,
-        }}
+        style={
+          {
+            aspectRatio: aspectRatioStyle.value,
+          } as CSSProperties
+        }
       >
         {images.length === 1 ? (
           <img src={images[0]} alt={images[0]} />
