@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import coverImage from "./images/cover.jpg";
 import styles from "./contact.module.css";
 
@@ -16,31 +16,31 @@ export default component$(() => {
           <div>
             <div>
               <h3 class={styles.contactMethodTitle}>電話</h3>
-              <a href="tel:+85290732506" class={styles.contactMethodLink}>
+              <Link href="tel:+85290732506" class={styles.contactMethodLink}>
                 9073 2506
-              </a>
+              </Link>
             </div>
             <div>
               <h3 class={styles.contactMethodTitle}>電郵</h3>
               <p class={styles.contactMethod}>
-                <a
+                <Link
                   href="mailto:contact@skylightengineering.com.hk"
                   class={styles.contactMethodLink}
                 >
                   contact@skylightengineering.com.hk
-                </a>
+                </Link>
               </p>
             </div>
             <div>
               <h3 class={styles.contactMethodTitle}>Instagram</h3>
               <div>
-                <a
+                <Link
                   href="https://www.instagram.com/skylight_engg_901/"
                   target="_blank"
                   class={styles.contactMethodLink}
                 >
                   @skylight_engg_901
-                </a>
+                </Link>
               </div>
             </div>
           </div>
