@@ -144,7 +144,7 @@ export default component$(({ photos }: any) => {
                     src={image}
                     alt={image}
                     id={index.toString()}
-                    key={repeatIndex + index}
+                    key={repeatIndex + "_" + index}
                     class={styles.heroSlideshowSlide}
                   />
                 );

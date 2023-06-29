@@ -17,7 +17,7 @@ export const useImageSource = routeLoader$(async (requestEvent) => {
       ...item,
       path: requestEvent.url.origin + "/Skylight_Engineering" + item.path,
     }));
-    return data;
+    return modifiedData;
   } catch (error) {
     return [[]];
   }
