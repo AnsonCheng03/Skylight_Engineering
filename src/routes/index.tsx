@@ -13,10 +13,13 @@ export const useImageSource = routeLoader$(async (requestEvent) => {
   );
   try {
     const data = await res.json();
+    const modifiedData = data.map((item: any) => ({
+      ...item,
+      path: requestEvent.url.origin + "/Skylight_Engineering" + item.path,
+    }));
     return data;
   } catch (error) {
-    console.log(error);
-    return [];
+    return [[]];
   }
 });
 
