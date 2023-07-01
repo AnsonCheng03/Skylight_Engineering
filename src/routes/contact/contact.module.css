@@ -70,7 +70,7 @@
 }
 
 .mapFrame {
-  width: 100%;
+  width: 100vw;
   aspect-ratio: 1.618;
   border: none;
   border-radius: 8px;
