@@ -1,7 +1,16 @@
+.heroContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .hero {
   position: relative;
   width: 100%;
+  max-width: calc(50vh / 780 * 1600 * 2.4);
   transform: scaleY(0.85);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .hero::after {
@@ -20,8 +29,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1600 / 780;
+  max-width: calc(50vh / 780 * 1600);
   transform: scaleY(calc(1 / 0.85)) translateY(-3%);
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-bottom: 1.5rem;
   z-index: 2;
 }
