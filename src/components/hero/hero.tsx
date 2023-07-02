@@ -145,7 +145,7 @@ export default component$(({ photos }: any) => {
                     alt={image}
                     id={
                       images.length == 3
-                        ? (index + 1) % images.length.toString()
+                        ? ((index + 1) % images.length).toString()
                         : Math.abs((index - 2) % images.length).toString()
                     }
                     key={repeatIndex + "_" + index}
