@@ -143,7 +143,11 @@ export default component$(({ photos }: any) => {
                   <img
                     src={image}
                     alt={image}
-                    id={index.toString()}
+                    id={
+                      images.length == 3
+                        ? (index + 1) % images.length.toString()
+                        : Math.abs((index - 2) % images.length).toString()
+                    }
                     key={repeatIndex + "_" + index}
                     class={styles.heroSlideshowSlide}
                   />
@@ -161,11 +165,7 @@ export default component$(({ photos }: any) => {
                 return (
                   <div
                     class={
-                      images.length === 2
-                        ? index === 0
-                          ? [styles.dot, styles.active, "dot"]
-                          : [styles.dot, "dot"]
-                        : index === 2
+                      index === 0
                         ? [styles.dot, styles.active, "dot"]
                         : [styles.dot, "dot"]
                     }
