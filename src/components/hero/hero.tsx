@@ -17,9 +17,10 @@ export default component$(({ photos }: any) => {
   );
 
   const update_dots = $(() => {
-    const dots = document.querySelectorAll(".dot");
+    const dots = document.querySelectorAll(`.${styles.dot}`);
     //get the 3rd image
-    const thirdImage = document.querySelector(".hero-slideshow")?.children[2];
+    const thirdImage = document.querySelector(`.${styles.heroSlideshow}`)
+      ?.children[2];
     //get the id of the 3rd image
     const thirdImageId = thirdImage?.id;
     //remove active class from all dots
@@ -33,24 +34,29 @@ export default component$(({ photos }: any) => {
   //slideshow controls
   const next_slide = $(() => {
     // move the first child in hero-slideshow to the last child
-    const firstChild =
-      document.querySelector(".hero-slideshow")?.firstElementChild;
+    const firstChild = document.querySelector(
+      `.${styles.heroSlideshow}`
+    )?.firstElementChild;
     if (firstChild)
-      document.querySelector(".hero-slideshow")?.appendChild(firstChild);
+      document
+        .querySelector(`.${styles.heroSlideshow}`)
+        ?.appendChild(firstChild);
 
     update_dots();
   });
 
   const prev_slide = $(() => {
     // move the last child in hero-slideshow to the first child
-    const firstChild =
-      document.querySelector(".hero-slideshow")?.firstElementChild;
-    const lastChild =
-      document.querySelector(".hero-slideshow")?.lastElementChild;
+    const firstChild = document.querySelector(
+      `.${styles.heroSlideshow}`
+    )?.firstElementChild;
+    const lastChild = document.querySelector(
+      `.${styles.heroSlideshow}`
+    )?.lastElementChild;
 
     if (firstChild && lastChild)
       document
-        .querySelector(".hero-slideshow")
+        .querySelector(`.${styles.heroSlideshow}`)
         ?.insertBefore(lastChild, firstChild);
     update_dots();
   });
@@ -181,7 +187,7 @@ export default component$(({ photos }: any) => {
         class={images.length === 1 ? [styles.hero, styles.single] : styles.hero}
       >
         <div
-          class={[styles.heroSlideshow, "hero-slideshow"]}
+          class={styles.heroSlideshow}
           onTouchStart$={handleTouchStart}
           onTouchMove$={handleTouchMove}
           style={
@@ -220,9 +226,7 @@ export default component$(({ photos }: any) => {
                   return (
                     <div
                       class={
-                        index === 0
-                          ? [styles.dot, styles.active, "dot"]
-                          : [styles.dot, "dot"]
+                        index === 0 ? [styles.dot, styles.active] : [styles.dot]
                       }
                       key={index}
                       id={index.toString()}
