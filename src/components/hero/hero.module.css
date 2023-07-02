@@ -40,11 +40,10 @@
   top: 40%;
   left: 0;
   width: 100%;
-  max-height: calc(100% - 1.5rem);
-  /* object-fit: scale-down; */
+  height: calc(100% - 1.5rem);
   object-fit: cover;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  transform: translate(0, -50%);
+  transform: translate(0, -55%);
   scale: 0.85;
   transition: transform 0.3s ease-in-out;
   z-index: 2;
@@ -55,19 +54,19 @@
 }
 
 .heroSlideshow img:nth-child(2) {
-  transform: translate(-95%, -50%) scale(0.85);
+  transform: translate(-90%, -50%) scale(0.75);
 }
 
 .heroSlideshow img:nth-child(4) {
-  transform: translate(95%, -50%) scale(0.85);
+  transform: translate(90%, -50%) scale(0.75);
 }
 
 .heroSlideshow img:nth-child(1) {
-  transform: translate(-190%, -50%) scale(0.85);
+  transform: translate(-180%, -50%) scale(0.75);
 }
 
 .heroSlideshow img:nth-child(n + 5) {
-  transform: translate(190%, -50%) scale(0.85);
+  transform: translate(180%, -50%) scale(0.75);
 }
 
 .heroSlideshowControls {
