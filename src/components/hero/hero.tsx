@@ -136,18 +136,14 @@ export default component$(({ photos }: any) => {
         ) : (
           <>
             {[
-              ...Array(images.length <= 4 ? Math.ceil(6 / images.length) : 1),
+              ...Array(images.length < 4 ? Math.ceil(6 / images.length) : 1),
             ].map((_, repeatIndex) => {
               return images.map((image: string, index: number) => {
                 return (
                   <img
                     src={image}
                     alt={image}
-                    id={
-                      images.length == 3
-                        ? ((index + 1) % images.length).toString()
-                        : Math.abs((index - 2) % images.length).toString()
-                    }
+                    id={((index < 2 && images.length) + index - 2).toString()}
                     key={repeatIndex + "_" + index}
                     class={styles.heroSlideshowSlide}
                   />
