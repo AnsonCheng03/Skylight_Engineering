@@ -9,6 +9,8 @@ export default component$(({ photos }: any) => {
   const autoplay = useSignal(false);
   const autoplayInterval = useSignal<any>(undefined);
   const aspectRatioStyle = useSignal(1);
+  const xDown = useSignal<number | null>(null);
+  const yDown = useSignal<number | null>(null);
 
   const images = photos.flatMap((photo: any) =>
     photo.Slideshow?.map((slide: any) => photo.path + "/" + slide)
@@ -119,12 +121,68 @@ export default component$(({ photos }: any) => {
     }
   });
 
+  const getTouches = $((evt: any) => {
+    return (
+      evt.touches || // browser API
+      evt.originalEvent.touches
+    ); // jQuery
+  });
+
+  const handleTouchStart = $((evt: any) => {
+    getTouches(evt).then((touches) => {
+      xDown.value = touches[0].clientX;
+      yDown.value = touches[0].clientY;
+    });
+  });
+
+  const handleTouchMove = $((evt: any) => {
+    if (changingDot.value) return;
+    changingDot.value = true;
+
+    if (!xDown.value || !yDown.value) {
+      return;
+    }
+
+    const xUp = evt.touches[0].clientX;
+    const yUp = evt.touches[0].clientY;
+
+    const xDiff = xDown.value - xUp;
+    const yDiff = yDown.value - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      //pause autoplay
+      stop_autoplay();
+
+      /*most significant*/
+      if (xDiff > 0) {
+        /* left swipe */
+        next_slide();
+      } else {
+        /* right swipe */
+        prev_slide();
+      }
+
+      //restart autoplay
+      start_autoplay();
+    }
+    /* reset values */
+    xDown.value = null;
+    yDown.value = null;
+
+    //update changingDot
+    setTimeout(() => {
+      changingDot.value = false;
+    }, 300);
+  });
+
   return images.length > 0 ? (
     <section
       class={images.length === 1 ? [styles.hero, styles.single] : styles.hero}
     >
       <div
         class={[styles.heroSlideshow, "hero-slideshow"]}
+        onTouchStart$={handleTouchStart}
+        onTouchMove$={handleTouchMove}
         style={
           {
             aspectRatio: aspectRatioStyle.value,
