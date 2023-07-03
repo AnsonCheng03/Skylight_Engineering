@@ -80,6 +80,21 @@
   color: rgb(50, 50, 50);
 }
 
+.highlight {
+  animation: highlight 3s ease-in-out infinite;
+}
+
+@keyframes highlight {
+  0%,
+  100% {
+    border: 2px solid #aaaaaa;
+  }
+
+  50% {
+    border: 2px solid #aaaacc;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .cases {

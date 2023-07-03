@@ -1,11 +1,11 @@
-import { component$, $, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, $ } from "@builder.io/qwik";
 import styles from "./displayCase.module.css";
 import cameraIcon from "./assets/camera.png";
 import copyLinkIcon from "./assets/copy-link.png";
 import shareIcon from "./assets/share.png";
 
 export default component$(
-  ({ photos, activeType, name, fullScreenSlideshow }: any) => {
+  ({ photos, activeType, fullScreenSlideshow }: any) => {
     const copyLink = $((type: any, name: any, showAlert = true) => {
       //Create a temporary input element
       const tempInput = document.createElement("input");
@@ -43,32 +43,12 @@ export default component$(
       }
     });
 
-    const jumpToCaseByQuery = $((name: any) => {
-      if (name) {
-        const cases = document.querySelectorAll(`.${styles.case}`);
-        cases.forEach((caseItem) => {
-          if (caseItem.querySelector("h3")?.textContent == name) {
-            //scroll to case below navigation bar
-            window.scrollTo({
-              top: (caseItem as HTMLElement).offsetTop - 125,
-              behavior: "smooth",
-            });
-            return;
-          }
-        });
-      }
-    });
-
-    useVisibleTask$(() => {
-      jumpToCaseByQuery(name);
-    });
-
     return (
       <section class={styles.displayCase}>
         {photos.map((photo: any) => {
           return (
             photo.type == activeType.value && (
-              <div class={styles.case}>
+              <div class={[styles.case, "case"]}>
                 <h3>{photo.name}</h3>
                 <div class={styles.caseDetails}>
                   <div

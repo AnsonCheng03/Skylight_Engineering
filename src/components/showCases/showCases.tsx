@@ -13,7 +13,6 @@ export default component$(
         <DisplayCase
           photos={photos}
           activeType={activeType}
-          name={name}
           fullScreenSlideshow={fullScreenSlideshow}
         />
       </section>
