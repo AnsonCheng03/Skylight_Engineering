@@ -6,7 +6,10 @@ import styles from "./example.module.css";
 
 export const useImageSource = routeLoader$(async (requestEvent) => {
   const res = await fetch(
-    requestEvent.url.origin + "/Skylight_Engineering/Images.json",
+    requestEvent.url.origin +
+      "/Skylight_Engineering/Images.json" +
+      "?t=" +
+      Date.now(),
     { cache: "no-store" }
   );
   try {
