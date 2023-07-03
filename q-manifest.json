@@ -1,5 +1,5 @@
 {
-  "manifestHash": "t17dcj",
+  "manifestHash": "gyb3n4",
   "symbols": {
     "s_02wMImzEAbk": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -9,7 +9,11 @@
       "ctxKind": "function",
       "ctxName": "useTask$",
       "captures": true,
-      "parent": "s_TxCFOy819ag"
+      "parent": "s_TxCFOy819ag",
+      "loc": [
+        22140,
+        30934
+      ]
     },
     "s_EtLAmXagu7I": {
       "origin": "components/showCases/selectCase/selectCase.tsx",
@@ -19,7 +23,11 @@
       "ctxKind": "function",
       "ctxName": "useVisibleTask$",
       "captures": true,
-      "parent": "s_FMO00A0rUWQ"
+      "parent": "s_FMO00A0rUWQ",
+      "loc": [
+        1332,
+        1372
+      ]
     },
     "s_l6wsIrhHw4Q": {
       "origin": "components/hero/hero.tsx",
@@ -29,7 +37,11 @@
       "ctxKind": "function",
       "ctxName": "useVisibleTask$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        3610,
+        4120
+      ]
     },
     "s_3lb9EjxI5sA": {
       "origin": "components/footer/footer.tsx",
@@ -38,7 +50,11 @@
       "hash": "3lb9EjxI5sA",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        250,
+        1687
+      ]
     },
     "s_3sccYCDd1Z0": {
       "origin": "root.tsx",
@@ -47,7 +63,11 @@
       "hash": "3sccYCDd1Z0",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        201,
+        781
+      ]
     },
     "s_8gdLBszqbaM": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -56,7 +76,11 @@
       "hash": "8gdLBszqbaM",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        32734,
+        34360
+      ]
     },
     "s_EpknaQ0Jdho": {
       "origin": "components/slideShow/slideShow.tsx",
@@ -65,7 +89,11 @@
       "hash": "EpknaQ0Jdho",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        123,
+        2780
+      ]
     },
     "s_FMO00A0rUWQ": {
       "origin": "components/showCases/selectCase/selectCase.tsx",
@@ -74,7 +102,11 @@
       "hash": "FMO00A0rUWQ",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        141,
+        2909
+      ]
     },
     "s_M0MhZOWBKK8": {
       "origin": "routes/contact/index.tsx",
@@ -83,7 +115,11 @@
       "hash": "M0MhZOWBKK8",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        209,
+        2331
+      ]
     },
     "s_Nk9PlpjQm9Y": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -92,7 +128,11 @@
       "hash": "Nk9PlpjQm9Y",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        44288,
+        45639
+      ]
     },
     "s_Oiogz3xVO64": {
       "origin": "components/about-us/aboutUs.tsx",
@@ -101,7 +141,11 @@
       "hash": "Oiogz3xVO64",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        254,
+        1971
+      ]
     },
     "s_PZswLDq46H4": {
       "origin": "routes/example/index.tsx",
@@ -110,7 +154,11 @@
       "hash": "PZswLDq46H4",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        810,
+        1511
+      ]
     },
     "s_TxCFOy819ag": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -119,7 +167,11 @@
       "hash": "TxCFOy819ag",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        18870,
+        31221
+      ]
     },
     "s_VkLNXphUh5s": {
       "origin": "routes/layout.tsx",
@@ -128,7 +180,11 @@
       "hash": "VkLNXphUh5s",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        256,
+        400
+      ]
     },
     "s_WmYC5H00wtI": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -137,7 +193,11 @@
       "hash": "WmYC5H00wtI",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        31352,
+        32615
+      ]
     },
     "s_c4GS49xCdTA": {
       "origin": "components/hero/hero.tsx",
@@ -146,7 +206,11 @@
       "hash": "c4GS49xCdTA",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        295,
+        7662
+      ]
     },
     "s_cBuMhsRv68k": {
       "origin": "components/showCases/showCases.tsx",
@@ -155,7 +219,11 @@
       "hash": "cBuMhsRv68k",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        237,
+        656
+      ]
     },
     "s_ceU05TscGYE": {
       "origin": "components/header/header.tsx",
@@ -164,7 +232,11 @@
       "hash": "ceU05TscGYE",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        163,
+        1060
+      ]
     },
     "s_dle9cTZNTpw": {
       "origin": "components/floatingContact/floatingContact.tsx",
@@ -173,7 +245,11 @@
       "hash": "dle9cTZNTpw",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        227,
+        550
+      ]
     },
     "s_e0ssiDXoeAM": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -182,7 +258,11 @@
       "hash": "e0ssiDXoeAM",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        7908,
+        8622
+      ]
     },
     "s_gl0cK830bdA": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -191,7 +271,11 @@
       "hash": "gl0cK830bdA",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        198,
+        3942
+      ]
     },
     "s_jYyS9IWa9Yk": {
       "origin": "components/examples/examples.tsx",
@@ -200,7 +284,11 @@
       "hash": "jYyS9IWa9Yk",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        185,
+        1874
+      ]
     },
     "s_xYL1qOwPyDI": {
       "origin": "routes/index.tsx",
@@ -209,7 +297,11 @@
       "hash": "xYL1qOwPyDI",
       "ctxKind": "function",
       "ctxName": "component$",
-      "captures": false
+      "captures": false,
+      "loc": [
+        905,
+        1086
+      ]
     },
     "s_RPDJAz33WLA": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -219,7 +311,11 @@
       "ctxKind": "function",
       "ctxName": "useStyles$",
       "captures": false,
-      "parent": "s_TxCFOy819ag"
+      "parent": "s_TxCFOy819ag",
+      "loc": [
+        18925,
+        18959
+      ]
     },
     "s_A5bZC7WO00A": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -228,7 +324,11 @@
       "hash": "A5bZC7WO00A",
       "ctxKind": "function",
       "ctxName": "submit",
-      "captures": true
+      "captures": true,
+      "loc": [
+        35728,
+        37362
+      ]
     },
     "s_DyVc0YBIqQU": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -237,7 +337,11 @@
       "hash": "DyVc0YBIqQU",
       "ctxKind": "function",
       "ctxName": "spaInit",
-      "captures": false
+      "captures": false,
+      "loc": [
+        1391,
+        6849
+      ]
     },
     "s_wOIPfiQ04l4": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -246,7 +350,11 @@
       "hash": "wOIPfiQ04l4",
       "ctxKind": "function",
       "ctxName": "stuff",
-      "captures": true
+      "captures": true,
+      "loc": [
+        40350,
+        42174
+      ]
     },
     "s_000GzeKFSMk": {
       "origin": "components/slideShow/slideShow.tsx",
@@ -256,7 +364,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_EpknaQ0Jdho"
+      "parent": "s_EpknaQ0Jdho",
+      "loc": [
+        194,
+        243
+      ]
     },
     "s_50HVq7I22aQ": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -266,7 +378,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        1972,
+        2063
+      ]
     },
     "s_BPhRZzC0M9U": {
       "origin": "components/hero/hero.tsx",
@@ -276,7 +392,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        4476,
+        5260
+      ]
     },
     "s_BUbtvTyvVRE": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -286,7 +406,11 @@
       "ctxKind": "function",
       "ctxName": "goto",
       "captures": false,
-      "parent": "s_WmYC5H00wtI"
+      "parent": "s_WmYC5H00wtI",
+      "loc": [
+        31753,
+        31814
+      ]
     },
     "s_EJwHBHrdBdc": {
       "origin": "components/footer/footer.tsx",
@@ -296,7 +420,11 @@
       "ctxKind": "jSXProp",
       "ctxName": "onClick$",
       "captures": false,
-      "parent": "s_3lb9EjxI5sA"
+      "parent": "s_3lb9EjxI5sA",
+      "loc": [
+        1104,
+        1258
+      ]
     },
     "s_EVasqvu2VkQ": {
       "origin": "components/hero/hero.tsx",
@@ -306,7 +434,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": false,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        732,
+        1267
+      ]
     },
     "s_Erqx7XCBmuw": {
       "origin": "components/footer/footer.tsx",
@@ -316,7 +448,11 @@
       "ctxKind": "jSXProp",
       "ctxName": "onClick$",
       "captures": false,
-      "parent": "s_3lb9EjxI5sA"
+      "parent": "s_3lb9EjxI5sA",
+      "loc": [
+        516,
+        594
+      ]
     },
     "s_H1P2Gw8FFKc": {
       "origin": "components/slideShow/slideShow.tsx",
@@ -326,7 +462,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": false,
-      "parent": "s_EpknaQ0Jdho"
+      "parent": "s_EpknaQ0Jdho",
+      "loc": [
+        855,
+        2641
+      ]
     },
     "s_HJhXJTxqNuM": {
       "origin": "components/showCases/selectCase/selectCase.tsx",
@@ -336,7 +476,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_FMO00A0rUWQ"
+      "parent": "s_FMO00A0rUWQ",
+      "loc": [
+        2521,
+        2656
+      ]
     },
     "s_IY5gY0QwJdY": {
       "origin": "components/showCases/selectCase/selectCase.tsx",
@@ -346,7 +490,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_FMO00A0rUWQ"
+      "parent": "s_FMO00A0rUWQ",
+      "loc": [
+        326,
+        1310
+      ]
     },
     "s_K4z8nDmX6Us": {
       "origin": "components/hero/hero.tsx",
@@ -356,7 +504,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": false,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        4147,
+        4264
+      ]
     },
     "s_KB6BiqC2icE": {
       "origin": "components/hero/hero.tsx",
@@ -366,7 +518,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        2592,
+        3588
+      ]
     },
     "s_Li61ZAYm3n8": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -376,7 +532,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        3619,
+        3692
+      ]
     },
     "s_P0BY9DXbwpM": {
       "origin": "components/footer/footer.tsx",
@@ -386,7 +546,11 @@
       "ctxKind": "jSXProp",
       "ctxName": "onClick$",
       "captures": false,
-      "parent": "s_3lb9EjxI5sA"
+      "parent": "s_3lb9EjxI5sA",
+      "loc": [
+        861,
+        1012
+      ]
     },
     "s_Q6pH9Kv8TFg": {
       "origin": "components/hero/hero.tsx",
@@ -396,7 +560,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        4297,
+        4444
+      ]
     },
     "s_WvVnaluU6nc": {
       "origin": "components/hero/hero.tsx",
@@ -406,7 +574,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        1666,
+        2117
+      ]
     },
     "s_Xf5RAS97rZM": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -416,7 +588,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": false,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        277,
+        931
+      ]
     },
     "s_YV8yyzDG47s": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -426,7 +602,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        3305,
+        3394
+      ]
     },
     "s_YlKKYEfWog0": {
       "origin": "components/hero/hero.tsx",
@@ -436,7 +616,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        1317,
+        1639
+      ]
     },
     "s_ayOAyFQWvdU": {
       "origin": "components/examples/examples.tsx",
@@ -446,7 +630,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_jYyS9IWa9Yk"
+      "parent": "s_jYyS9IWa9Yk",
+      "loc": [
+        634,
+        986
+      ]
     },
     "s_eBQ0vFsFKsk": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -456,7 +644,11 @@
       "ctxKind": "function",
       "ctxName": "event$",
       "captures": false,
-      "parent": "s_8gdLBszqbaM"
+      "parent": "s_8gdLBszqbaM",
+      "loc": [
+        33236,
+        33299
+      ]
     },
     "s_fBNGZ46JMLQ": {
       "origin": "components/hero/hero.tsx",
@@ -466,7 +658,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        2482,
+        2564
+      ]
     },
     "s_fX0bDjeJa0E": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -476,7 +672,11 @@
       "ctxKind": "function",
       "ctxName": "goto",
       "captures": true,
-      "parent": "s_TxCFOy819ag"
+      "parent": "s_TxCFOy819ag",
+      "loc": [
+        20209,
+        21528
+      ]
     },
     "s_i1Cv0pYJNR0": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -486,7 +686,11 @@
       "ctxKind": "function",
       "ctxName": "event$",
       "captures": true,
-      "parent": "s_8gdLBszqbaM"
+      "parent": "s_8gdLBszqbaM",
+      "loc": [
+        33417,
+        33932
+      ]
     },
     "s_iIbgm00PvWM": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -496,7 +700,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        959,
+        1568
+      ]
     },
     "s_lByNi0Wsm1E": {
       "origin": "components/showCases/displayCase/displayCase.tsx",
@@ -506,7 +714,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_gl0cK830bdA"
+      "parent": "s_gl0cK830bdA",
+      "loc": [
+        2700,
+        3111
+      ]
     },
     "s_nSS7s47PUtk": {
       "origin": "components/hero/hero.tsx",
@@ -516,7 +728,11 @@
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        2181,
+        2452
+      ]
     },
     "s_p9MSze0ojs4": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -526,7 +742,11 @@
       "ctxKind": "function",
       "ctxName": "_jsxS",
       "captures": true,
-      "parent": "s_Nk9PlpjQm9Y"
+      "parent": "s_Nk9PlpjQm9Y",
+      "loc": [
+        44595,
+        45292
+      ]
     },
     "s_qJ1Ez2uOuB0": {
       "origin": "components/footer/footer.tsx",
@@ -536,7 +756,11 @@
       "ctxKind": "jSXProp",
       "ctxName": "onClick$",
       "captures": false,
-      "parent": "s_3lb9EjxI5sA"
+      "parent": "s_3lb9EjxI5sA",
+      "loc": [
+        685,
+        772
+      ]
     },
     "s_qwiP7x4uvt0": {
       "origin": "components/hero/hero.tsx",
@@ -546,7 +770,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        7043,
+        7127
+      ]
     },
     "s_w6kNbvlg4RM": {
       "origin": "components/hero/hero.tsx",
@@ -556,7 +784,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_c4GS49xCdTA"
+      "parent": "s_c4GS49xCdTA",
+      "loc": [
+        7340,
+        7465
+      ]
     },
     "s_zSiRmJ0LnEQ": {
       "origin": "components/showCases/selectCase/selectCase.tsx",
@@ -566,7 +798,11 @@
       "ctxKind": "eventHandler",
       "ctxName": "onClick$",
       "captures": true,
-      "parent": "s_FMO00A0rUWQ"
+      "parent": "s_FMO00A0rUWQ",
+      "loc": [
+        1765,
+        2244
+      ]
     }
   },
   "mapping": {
@@ -579,7 +815,7 @@
     "s_EpknaQ0Jdho": "q-beea7c10.js",
     "s_FMO00A0rUWQ": "q-712990f0.js",
     "s_M0MhZOWBKK8": "q-10fdbaab.js",
-    "s_Nk9PlpjQm9Y": "q-fc8886f6.js",
+    "s_Nk9PlpjQm9Y": "q-607ed0d5.js",
     "s_Oiogz3xVO64": "q-d43c5b0a.js",
     "s_PZswLDq46H4": "q-1ddaf625.js",
     "s_TxCFOy819ag": "q-b045383b.js",
@@ -624,7 +860,7 @@
     "s_iIbgm00PvWM": "q-0bc1f87a.js",
     "s_lByNi0Wsm1E": "q-0bc1f87a.js",
     "s_nSS7s47PUtk": "q-b9ab451b.js",
-    "s_p9MSze0ojs4": "q-fc8886f6.js",
+    "s_p9MSze0ojs4": "q-607ed0d5.js",
     "s_qJ1Ez2uOuB0": "q-1c73dcdc.js",
     "s_qwiP7x4uvt0": "q-b9ab451b.js",
     "s_w6kNbvlg4RM": "q-b9ab451b.js",
@@ -817,6 +1053,22 @@
       ],
       "origins": [
         "@qwik-city-entries"
+      ]
+    },
+    "q-607ed0d5.js": {
+      "size": 1037,
+      "imports": [
+        "q-448d71e3.js",
+        "q-fec4f8bb.js"
+      ],
+      "origins": [
+        "src/entry_GetForm.js",
+        "src/s_nk9plpjqm9y.js",
+        "src/s_p9msze0ojs4.js"
+      ],
+      "symbols": [
+        "s_Nk9PlpjQm9Y",
+        "s_p9MSze0ojs4"
       ]
     },
     "q-61e731e2.js": {
@@ -1196,22 +1448,6 @@
         "s_H1P2Gw8FFKc"
       ]
     },
-    "q-fc8886f6.js": {
-      "size": 980,
-      "imports": [
-        "q-448d71e3.js",
-        "q-fec4f8bb.js"
-      ],
-      "origins": [
-        "src/entry_GetForm.js",
-        "src/s_nk9plpjqm9y.js",
-        "src/s_p9msze0ojs4.js"
-      ],
-      "symbols": [
-        "s_Nk9PlpjQm9Y",
-        "s_p9MSze0ojs4"
-      ]
-    },
     "q-fcf3d704.js": {
       "size": 207,
       "imports": [
@@ -1257,6 +1493,17 @@
   },
   "injections": [
     {
+      "tag": "link",
+      "location": "head",
+      "attributes": {
+        "rel": "preload",
+        "href": "/Skylight_Engineering/build/q-8cc967e1.ttf",
+        "as": "font",
+        "type": "font/ttf",
+        "crossorigin": ""
+      }
+    },
+    {
       "tag": "style",
       "location": "head",
       "attributes": {
@@ -1274,7 +1521,7 @@
     }
   },
   "platform": {
-    "qwik": "1.2.3",
+    "qwik": "1.2.4",
     "vite": "",
     "rollup": "3.26.0",
     "env": "node",
