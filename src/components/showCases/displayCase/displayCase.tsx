@@ -63,7 +63,7 @@ export default component$(
                   </div>
                   <div class={styles.caseDescription}>
                     {photo.Text?.split("\n").map((text: any) => {
-                      return <p>{text}</p>;
+                      return <p key={text}>{text}</p>;
                     })}
                   </div>
                   <div class={styles.buttonContainer}>

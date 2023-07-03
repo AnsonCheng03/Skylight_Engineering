@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 import { component$, useSignal, $, useVisibleTask$ } from "@builder.io/qwik";
-import {
-  type DocumentHead,
-  routeLoader$,
-  useLocation,
-  server$,
-} from "@builder.io/qwik-city";
+import { type DocumentHead, useLocation } from "@builder.io/qwik-city";
 import AboutUs from "~/components/about-us/aboutUs";
 import Examples from "~/components/examples/examples";
 import Hero from "~/components/hero/hero";
