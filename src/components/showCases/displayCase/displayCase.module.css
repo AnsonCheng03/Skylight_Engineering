@@ -4,7 +4,7 @@
   max-width: 100%;
 }
 
-.case {
+.d .case {
   border-radius: 5px;
   background-color: #fff;
   align-items: center;
@@ -74,6 +74,7 @@
   border: none;
   background-color: #e6e6eb;
   border-radius: 5px;
+  color: #222;
   white-space: nowrap;
   padding: 9px;
   margin-right: 5px;
