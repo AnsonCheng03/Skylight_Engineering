@@ -93,16 +93,18 @@ export default component$(({ photos }: any) => {
       activeDot
     );
 
+    const animationTime = 550;
+
     //perform next_slide() as many times as the difference between the dotId and activeDotId
     const difference = dotId - activeDotId;
     for (let i = 0; i < Math.abs(difference); i++)
-      setTimeout(difference > 0 ? next_slide : prev_slide, 300 * i);
+      setTimeout(difference > 0 ? next_slide : prev_slide, animationTime * i);
 
     //restart autoplay and update changingDot
     setTimeout(() => {
       if (originalAutoplay) start_autoplay();
       changingDot.value = false;
-    }, 300 * Math.abs(difference));
+    }, animationTime * Math.abs(difference));
   });
 
   useVisibleTask$(() => {
@@ -201,7 +203,7 @@ export default component$(({ photos }: any) => {
           ) : (
             <>
               {[
-                ...Array(images.length < 4 ? Math.ceil(6 / images.length) : 1),
+                ...Array(images.length <= 4 ? Math.ceil(6 / images.length) : 1),
               ].map((_, repeatIndex) => {
                 return images.map((image: string, index: number) => {
                   return (
