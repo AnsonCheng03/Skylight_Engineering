@@ -1,4 +1,4 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { routeLoader$, useLocation } from "@builder.io/qwik-city";
 import ShowCases from "~/components/showCases/showCases";
 import SlideShow from "~/components/slideShow/slideShow";
@@ -26,6 +26,7 @@ export default component$(() => {
   const imageSource = useImageSource().value;
   const type = location.url.searchParams.get("type");
   const name = location.url.searchParams.get("name");
+  const fullScreenSlideshow = useSignal<string | null>(null);
 
   return (
     <>
@@ -34,9 +35,17 @@ export default component$(() => {
         <p class={styles.tag}>{imageSource.length}</p>
       </section>
 
-      <ShowCases photos={imageSource} type={type} name={name} />
+      <ShowCases
+        photos={imageSource}
+        type={type}
+        name={name}
+        fullScreenSlideshow={fullScreenSlideshow}
+      />
 
-      <SlideShow photos={imageSource} />
+      <SlideShow
+        photos={imageSource}
+        fullScreenSlideshow={fullScreenSlideshow}
+      />
     </>
   );
 });

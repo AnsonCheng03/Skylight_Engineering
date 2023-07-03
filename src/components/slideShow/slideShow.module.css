@@ -1,6 +1,6 @@
 /* Fullscreen slideshow */
 .fullScreenSlideshow {
-  display: none;
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
