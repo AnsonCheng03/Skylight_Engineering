@@ -1,92 +1,3 @@
-/* Case Selection */
-.cases {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5%;
-  padding: 0 10%;
-  margin-bottom: 50px;
-}
-
-.selectCase {
-  position: relative;
-  user-select: none;
-}
-
-.selectCase .container {
-  position: sticky;
-  top: 100px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  margin-right: 5%;
-  cursor: pointer;
-}
-
-.selectCase h3 {
-  margin: 0;
-  font-size: 1.1em;
-}
-
-.selectCase .caseType {
-  font-weight: 600;
-  text-align: left;
-  color: rgba(0, 0, 0, 0.85);
-  border-bottom: 1px solid #f3f1f3;
-  padding: 1rem;
-  background-color: #fff;
-}
-
-.selectCase .caseType:first-child {
-  border-radius: 5px 5px 0 0;
-}
-
-.selectCase .caseType:last-child {
-  border-radius: 0 0 5px 5px;
-}
-
-.selectCase .caseType:hover {
-  background-color: #fafafa;
-}
-
-.selectCase .caseType.active:hover {
-  background-color: #fff;
-}
-
-.selectCase .active {
-  color: #4b64be;
-}
-
-.selectCase .caseType .caseTypeNavigation {
-  color: rgb(50, 50, 50);
-  display: none;
-  margin: 0;
-}
-
-.selectCase .caseType.active .caseTypeNavigation {
-  margin: 20px 0 0 10%;
-  display: block;
-}
-
-.selectCase .caseType .caseTypeNavigation h3 {
-  color: rgb(100, 100, 100);
-  height: 50px;
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #f3f1f3;
-}
-
-.selectCase .caseType .caseTypeNavigation h3:first-child {
-  border-top: 0;
-}
-
-.selectCase .caseType .caseTypeNavigation h3:hover {
-  color: rgb(50, 50, 50);
-}
-
 /* Case Display */
 .displayCase {
   grid-column: 2 / -1;
@@ -157,6 +68,7 @@
   border: none;
   background-color: #e6e6eb;
   border-radius: 5px;
+  white-space: nowrap;
   padding: 9px;
   margin-right: 5px;
   cursor: pointer;

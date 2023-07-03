@@ -1,11 +1,4 @@
 /* Case Selection */
-.cases {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5%;
-  padding: 0 10%;
-  margin-bottom: 50px;
-}
 
 .selectCase {
   position: relative;
@@ -85,100 +78,6 @@
 
 .selectCase .caseType .caseTypeNavigation h3:hover {
   color: rgb(50, 50, 50);
-}
-
-/* Case Display */
-.displayCase {
-  grid-column: 2 / -1;
-  max-width: 100%;
-}
-
-.case {
-  border-radius: 5px;
-  background-color: #fff;
-  align-items: center;
-  padding: 15px 30px 30px 30px;
-  margin-bottom: 30px;
-}
-
-.case h3 {
-  margin: 15px 0;
-  font-size: 1.5em;
-}
-
-.caseDetails {
-  padding: 0 10px 0 30px;
-}
-
-.case .photoSelector {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.case .photoSelector img {
-  width: 100%;
-  aspect-ratio: 1.618;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.case .photoSelector .background {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.case .photoSelector .cover {
-  position: absolute;
-  width: 25%;
-  padding: calc(38% / 1.618) 38%;
-  object-fit: cover;
-  background-color: #fff;
-  opacity: 60%;
-  transition: opacity 0.5s;
-  cursor: pointer;
-}
-
-.case .photoSelector:hover > .cover {
-  opacity: 90%;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.case .sharingButton,
-.case .quotationButton {
-  width: 40px;
-  aspect-ratio: 1/1;
-  border: none;
-  background-color: #e6e6eb;
-  border-radius: 5px;
-  padding: 9px;
-  margin-right: 5px;
-  cursor: pointer;
-  transition: background-color 0.5s;
-}
-
-.case .quotationButton {
-  width: max-content;
-  height: 40px;
-  aspect-ratio: unset;
-  font-size: 15px;
-  padding: 9px 15px;
-}
-
-.case .sharingButton img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.case .sharingButton:hover {
-  background-color: #d9d9e0;
 }
 
 /* Mobile */
