@@ -6,7 +6,7 @@ import shareIcon from "./assets/share.png";
 
 export default component$(
   ({ photos, activeType, name, fullScreenSlideshow }: any) => {
-    const copyLink = $((type: any, name: any) => {
+    const copyLink = $((type: any, name: any, showAlert = true) => {
       //Create a temporary input element
       const tempInput = document.createElement("input");
       const url = window.location.href.split("?")[0];
@@ -22,6 +22,9 @@ export default component$(
 
       //Remove the input element
       document.body.removeChild(tempInput);
+
+      //Show a alert
+      if (showAlert) window.alert("連結已複製到剪貼簿。");
     });
 
     const shareLink = $((photo: any) => {
@@ -36,7 +39,7 @@ export default component$(
       } else {
         // do something else like copying the data to the clipboard
         window.alert("分享功能暫時未能使用，已為你複製連結。");
-        copyLink(photo.type, photo.name);
+        copyLink(photo.type, photo.name, false);
       }
     });
 
