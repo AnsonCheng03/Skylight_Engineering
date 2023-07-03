@@ -14,17 +14,11 @@
 
 .serviceContentContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 50%));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   column-gap: 50px;
 }
 
-@media (max-width: 1100px) {
-  .serviceContentContainer {
-    grid-template-columns: 1fr;
-  }
-}
-
-.service-items {
+.serviceItems {
   display: flex;
   max-width: calc(100vw - 50px);
 }
