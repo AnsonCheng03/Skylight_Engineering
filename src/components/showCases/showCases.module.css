@@ -166,6 +166,7 @@
 .case .quotationButton {
   width: max-content;
   height: 40px;
+  aspect-ratio: unset;
   font-size: 15px;
   padding: 9px 15px;
 }
