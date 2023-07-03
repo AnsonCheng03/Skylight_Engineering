@@ -1,4 +1,4 @@
-import { component$, $, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, $, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import styles from "./showCases.module.css";
 import cameraIcon from "./assets/camera.png";
 import copyLinkIcon from "./assets/copy-link.png";
@@ -6,7 +6,7 @@ import shareIcon from "./assets/share.png";
 
 export default component$(
   ({ photos, type, name, fullScreenSlideshow }: any) => {
-    const activeType = type || photos[0].type;
+    const activeType = useSignal<string>(type || photos[0].type);
     const caseTypes = photos.map((photo: any) => photo.type);
     const distinctCaseTypes = [...new Set(caseTypes)];
 
@@ -72,21 +72,13 @@ export default component$(
               return (
                 <div
                   class={
-                    type == activeType
+                    type == activeType.value
                       ? [styles.caseType, styles.active]
                       : styles.caseType
                   }
                   key={type}
                   onClick$={() => {
-                    // //Remove active class
-                    // const activeCaseType =
-                    //   document.querySelector(".case-type.active");
-                    // activeCaseType.classList.remove("active");
-                    // //Add active class
-                    // caseType.classList.add("active");
-                    // //Remove all cases
-                    // const displayCase = document.querySelector(".display-case");
-                    // displayCase.innerHTML = "";
+                    activeType.value = type;
                   }}
                 >
                   <h3>{type}</h3>
@@ -114,7 +106,7 @@ export default component$(
         <section class={styles.displayCase}>
           {photos.map((photo: any) => {
             return (
-              photo.type == activeType && (
+              photo.type == activeType.value && (
                 <div class={styles.case}>
                   <h3>{photo.name}</h3>
                   <div class={styles.caseDetails}>
