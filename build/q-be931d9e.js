@@ -1,4 +1,4 @@
-import{l as i,$ as a,f as p,M as d,c,h as v,_ as l,v as _,p as y}from"./q-dc00917f.js";import{B as g,a as h,b}from"./q-93240c96.js";const C=()=>{const[e]=i(),s=`https://api.whatsapp.com/send?phone=85290732506&text=${`你好，我想查詢${e.name}的報價。`}`;window.open(s,"_blank")},I=e=>{const[t]=i(),o=window.location.href.split("?")[0],s={title:e.name,text:e.name+`
+import{l as i,$ as a,f as p,M as d,c,h as v,_ as l,v as _,p as y}from"./q-dc00917f.js";import{B as g,a as h,b}from"./q-913ab66d.js";const C=()=>{const[e]=i(),s=`https://api.whatsapp.com/send?phone=85290732506&text=${`你好，我想查詢${e.name}的報價。`}`;window.open(s,"_blank")},I=e=>{const[t]=i(),o=window.location.href.split("?")[0],s={title:e.name,text:e.name+`
 
 `+e.Text+`
 
