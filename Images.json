@@ -29,8 +29,18 @@
     "name": "西營盤俊傑花園",
     "data": "600呎",
     "Cover": "IMG_8717.jpg",
-    "Highlight": ["IMG_8717.jpg"],
-    "Slideshow": ["IMG_8717.jpg"],
+    "Highlight": [
+      "IMG_8717.jpg",
+      "IMG_8724.jpg",
+      "IMG_8717.jpg",
+      "IMG_8724.jpg"
+    ],
+    "Slideshow": [
+      "IMG_8717.jpg",
+      "IMG_8724.jpg",
+      "IMG_8717.jpg",
+      "IMG_8724.jpg"
+    ],
     "Text": "2022年 實用面積~600尺 全屋裝修"
   },
   {
@@ -50,8 +60,8 @@
     "type": "商鋪",
     "name": "ORION荔枝角商鋪",
     "Cover": "DSC07003.jpg",
-    "Highlight": ["DSC07001.jpg"],
-    "Slideshow": ["DSC07001.jpg"],
+    "Highlight": ["DSC07001.jpg", "DSC07003.jpg"],
+    "Slideshow": ["DSC07001.jpg", "DSC07003.jpg"],
     "Text": "2021年 實用面積~1700尺 雙層全鋪裝修"
   }
 ]
