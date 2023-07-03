@@ -25,13 +25,14 @@
 .case .photoSelector {
   position: relative;
   display: flex;
+  width: fit-content;
+  aspect-ratio: 1.618;
   justify-content: center;
   align-items: center;
 }
 
 .case .photoSelector img {
   width: 100%;
-  aspect-ratio: 1.618;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -42,8 +43,12 @@
 
 .case .photoSelector .cover {
   position: absolute;
-  width: 25%;
-  padding: calc(38% / 1.618) 38%;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 25%;
+  padding: 25% 25%;
+  border-radius: 5px;
   object-fit: cover;
   background-color: #fff;
   opacity: 60%;
@@ -84,10 +89,9 @@
   padding: 9px 15px;
 }
 
-.case .sharingButton img {
+.case .sharingButton .buttonImage {
   width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+  scale: 1.1;
 }
 
 .case .sharingButton:hover {

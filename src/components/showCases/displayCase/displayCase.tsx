@@ -1,8 +1,6 @@
 import { component$, $ } from "@builder.io/qwik";
 import styles from "./displayCase.module.css";
-import cameraIcon from "./assets/camera.png";
-import copyLinkIcon from "./assets/copy-link.png";
-import shareIcon from "./assets/share.png";
+import { BsCamera, BsLink, BsShare } from "@qwikest/icons/bootstrap";
 
 export default component$(
   ({ photos, activeType, fullScreenSlideshow }: any) => {
@@ -57,7 +55,7 @@ export default component$(
                       fullScreenSlideshow.value = photo.name;
                     }}
                   >
-                    <img class={styles.cover} src={cameraIcon} />
+                    <BsCamera class={styles.cover} />
                     <img
                       class={styles.background}
                       src={photo.path + "/" + photo.Cover}
@@ -87,7 +85,7 @@ export default component$(
                         copyLink(photo.type, photo.name);
                       }}
                     >
-                      <img src={copyLinkIcon} alt="copy link" />
+                      <BsLink class={styles.buttonImage} />
                     </button>
                     <button
                       class={styles.sharingButton}
@@ -95,7 +93,7 @@ export default component$(
                         shareLink(photo);
                       }}
                     >
-                      <img src={shareIcon} alt="share" />
+                      <BsShare class={styles.buttonImage} />
                     </button>
                   </div>
                 </div>
