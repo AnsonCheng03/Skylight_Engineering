@@ -10,7 +10,7 @@ export default component$(({ photos }: any) => {
       <h2>案例分享</h2>
       <div class={styles.cards}>
         <div class={styles.cardsContainer}>
-          {photos.map((photo: any) => {
+          {photos.value.map((photo: any) => {
             return photo.Highlight?.map((photoName: any) => (
               <div
                 class={styles.card}

@@ -14,7 +14,7 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
         </div>
         <div class={styles.slideshowContainer}>
           <div class={styles.slideshow}>
-            {photos.map((photo: any) => {
+            {photos.value.map((photo: any) => {
               if (photo.name === fullScreenSlideshow.value)
                 return photo.Images.map((image: any) => {
                   return (

@@ -2,7 +2,7 @@ import { component$, $, useVisibleTask$ } from "@builder.io/qwik";
 import styles from "./selectCase.module.css";
 
 export default component$(({ photos, activeType, name }: any) => {
-  const caseTypes = photos.map((photo: any) => photo.type);
+  const caseTypes = photos.value.map((photo: any) => photo.type);
   const distinctCaseTypes = [...new Set(caseTypes)];
 
   const jumpToCaseByQuery = $((name: any, highlight = true) => {
@@ -62,7 +62,8 @@ export default component$(({ photos, activeType, name }: any) => {
                 if (changeType)
                   setTimeout(() => {
                     jumpToCaseByQuery(
-                      photos.find((photo: any) => photo.type == type)?.name,
+                      photos.value.find((photo: any) => photo.type == type)
+                        ?.name,
                       false
                     );
                   }, 300);
@@ -70,7 +71,7 @@ export default component$(({ photos, activeType, name }: any) => {
             >
               <h3>{type}</h3>
               <div class={styles.caseTypeNavigation}>
-                {photos.map((photo: any) => {
+                {photos.value.map((photo: any) => {
                   return (
                     photo.type == type && (
                       <h3

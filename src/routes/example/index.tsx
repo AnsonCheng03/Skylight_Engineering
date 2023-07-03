@@ -1,41 +1,46 @@
-import { component$, useSignal } from "@builder.io/qwik";
-import { routeLoader$, useLocation } from "@builder.io/qwik-city";
+import { component$, useSignal, useVisibleTask$, $ } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 import ShowCases from "~/components/showCases/showCases";
 import SlideShow from "~/components/slideShow/slideShow";
 import styles from "./example.module.css";
 
-export const useImageSource = routeLoader$(async (requestEvent) => {
-  const res = await fetch(
-    requestEvent.url.origin +
-      "/Skylight_Engineering/Images.json" +
-      "?t=" +
-      Date.now(),
-    { cache: "no-store" }
-  );
-  try {
-    const data = await res.json();
-    const modifiedData = data.map((item: any) => ({
-      ...item,
-      path: requestEvent.url.origin + "/Skylight_Engineering" + item.path,
-    }));
-    return modifiedData;
-  } catch (error) {
-    return [[]];
-  }
-});
-
 export default component$(() => {
   const location = useLocation();
-  const imageSource = useImageSource().value;
   const type = location.url.searchParams.get("type");
   const name = location.url.searchParams.get("name");
   const fullScreenSlideshow = useSignal<string | null>(null);
+
+  const imageSource = useSignal([]);
+
+  const fetchImageSource = $(() => {
+    return fetch(
+      location.url.origin +
+        "/Skylight_Engineering/Images.json" +
+        "?t=" +
+        Date.now(),
+      { cache: "no-store" }
+    );
+  });
+
+  useVisibleTask$(async () => {
+    const res = await fetchImageSource();
+    try {
+      const data = await res.json();
+      const modifiedData = data.map((item: any) => ({
+        ...item,
+        path: location.url.origin + "/Skylight_Engineering" + item.path,
+      }));
+      imageSource.value = modifiedData;
+    } catch (error) {
+      imageSource.value = [];
+    }
+  });
 
   return (
     <>
       <section class={styles.banner}>
         <h2 class={styles.h2}>裝修案例</h2>
-        <p class={styles.tag}>{imageSource.length}</p>
+        <p class={styles.tag}>{imageSource.value.length}</p>
       </section>
 
       <ShowCases

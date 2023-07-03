@@ -12,9 +12,7 @@ export default component$(({ photos }: any) => {
   const xDown = useSignal<number | null>(null);
   const yDown = useSignal<number | null>(null);
 
-  const images = photos.flatMap((photo: any) =>
-    photo.Slideshow?.map((slide: any) => photo.path + "/" + slide)
-  );
+  const images = useSignal([]);
 
   const update_dots = $(() => {
     const dots = document.querySelectorAll(`.${styles.dot}`);
@@ -107,7 +105,15 @@ export default component$(({ photos }: any) => {
     }, animationTime * Math.abs(difference));
   });
 
-  useVisibleTask$(() => {
+  useVisibleTask$(({ track }: any) => {
+    track(() => {
+      photos.value;
+    });
+
+    images.value = photos.value.flatMap((photo: any) =>
+      photo.Slideshow?.map((slide: any) => photo.path + "/" + slide)
+    );
+
     // remove all intervals when load
     const interval_id = window.setInterval(function () {},
     Number.MAX_SAFE_INTEGER);
@@ -116,14 +122,14 @@ export default component$(({ photos }: any) => {
         window.clearInterval(i);
       }
 
-    if (images[0] === undefined) return;
+    if (images.value[0] === undefined) return;
     const img = new Image();
-    img.src = images[0];
+    img.src = images.value[0];
     img.onload = () => {
       aspectRatioStyle.value = img.width / img.height;
     };
 
-    if (images.length > 1) {
+    if (images.value.length > 1) {
       update_dots();
       start_autoplay();
     }
@@ -183,10 +189,12 @@ export default component$(({ photos }: any) => {
     }, 300);
   });
 
-  return images.length > 0 ? (
+  return images.value.length > 0 ? (
     <section class={styles.heroContainer}>
       <div
-        class={images.length === 1 ? [styles.hero, styles.single] : styles.hero}
+        class={
+          images.value.length === 1 ? [styles.hero, styles.single] : styles.hero
+        }
       >
         <div
           class={styles.heroSlideshow}
@@ -198,19 +206,27 @@ export default component$(({ photos }: any) => {
             } as CSSProperties
           }
         >
-          {images.length === 1 ? (
-            <img src={images[0]} alt={images[0]} />
+          {images.value.length === 1 ? (
+            <img src={images.value[0]} alt={images.value[0]} />
           ) : (
             <>
               {[
-                ...Array(images.length <= 4 ? Math.ceil(6 / images.length) : 1),
+                ...Array(
+                  images.value.length <= 4
+                    ? Math.ceil(6 / images.value.length)
+                    : 1
+                ),
               ].map((_, repeatIndex) => {
-                return images.map((image: string, index: number) => {
+                return images.value.map((image: string, index: number) => {
                   return (
                     <img
                       src={image}
                       alt={image}
-                      id={((index < 2 && images.length) + index - 2).toString()}
+                      id={(
+                        (index < 2 ? images.value.length : 0) +
+                        index -
+                        2
+                      ).toString()}
                       key={repeatIndex + "_" + index}
                       class={styles.heroSlideshowSlide}
                     />
@@ -220,11 +236,11 @@ export default component$(({ photos }: any) => {
             </>
           )}
         </div>
-        {images.length > 1 && (
+        {images.value.length > 1 && (
           <div class={styles.heroSlideshowControls}>
             <div class={styles.heroSlideshowControlsDotsContainer}>
               <div class={styles.heroSlideshowControlsDots}>
-                {images.map((_: any, index: number) => {
+                {images.value.map((_: any, index: number) => {
                   return (
                     <div
                       class={
@@ -254,6 +270,6 @@ export default component$(({ photos }: any) => {
       </div>
     </section>
   ) : (
-    <>{images.length}</>
+    <>{images.value.length}</>
   );
 });

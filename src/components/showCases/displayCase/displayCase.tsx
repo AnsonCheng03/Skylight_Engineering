@@ -43,7 +43,7 @@ export default component$(
 
     return (
       <section class={styles.displayCase}>
-        {photos.map((photo: any) => {
+        {photos.value.map((photo: any) => {
           return (
             photo.type == activeType.value && (
               <div class={[styles.case, "case"]}>
@@ -62,7 +62,7 @@ export default component$(
                     />
                   </div>
                   <div class={styles.caseDescription}>
-                    {photo.Text.split("\n").map((text: any) => {
+                    {photo.Text?.split("\n").map((text: any) => {
                       return <p>{text}</p>;
                     })}
                   </div>
