@@ -29,6 +29,13 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
                           const parent = target.parentElement;
                           if (parent) {
                             parent.classList.remove(styles.active);
+                            // remove highlight on the other photos
+                            const otherPhotos = parent.querySelectorAll("img");
+                            otherPhotos.forEach((photo) => {
+                              photo.classList.remove(styles.highlight);
+                            });
+                            // add highlight
+                            target.classList.add(styles.highlight);
                             //scroll to the photo
                             setTimeout(() => {
                               parent.parentElement?.scrollTo({
@@ -41,6 +48,7 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
                             }, 1000);
                           }
                         } else {
+                          target.classList.remove(styles.highlight);
                           target.classList.add(styles.active);
                           const parent = target.parentElement;
                           if (parent) {

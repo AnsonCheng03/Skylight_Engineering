@@ -86,6 +86,7 @@
 }
 
 .fullScreenSlideshow .slideshow.active img {
+  border: 2px solid transparent;
   width: 0%;
   height: 0%;
   transition: none;
@@ -96,6 +97,22 @@
   width: 100%;
   height: 100%;
   object-fit: scale-down;
+}
+
+.highlight {
+  border-radius: 2px;
+  animation: highlight 1s ease-in-out infinite;
+}
+
+@keyframes highlight {
+  0%,
+  100% {
+    border: 2px solid #aaaaaa;
+  }
+
+  50% {
+    border: 2px solid #aaaacc;
+  }
 }
 
 @media (max-width: 300px) {
