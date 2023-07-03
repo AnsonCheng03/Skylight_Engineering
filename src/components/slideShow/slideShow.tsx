@@ -32,7 +32,10 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
                             //scroll to the photo
                             setTimeout(() => {
                               parent.parentElement?.scrollTo({
-                                top: target.offsetTop - window.innerHeight / 2 + target.offsetHeight ,
+                                top:
+                                  target.offsetTop -
+                                  window.innerHeight / 2 +
+                                  target.offsetHeight / 2,
                                 behavior: "smooth",
                               });
                             }, 1000);
@@ -48,7 +51,6 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
                     />
                   );
                 });
-            })}
             })}
           </div>
         </div>
