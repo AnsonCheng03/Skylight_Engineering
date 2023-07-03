@@ -189,87 +189,91 @@ export default component$(({ photos }: any) => {
     }, 300);
   });
 
-  return images.value.length > 0 ? (
-    <section class={styles.heroContainer}>
-      <div
-        class={
-          images.value.length === 1 ? [styles.hero, styles.single] : styles.hero
-        }
-      >
+  return (
+    images.value.length > 0 && (
+      <section class={styles.heroContainer}>
         <div
-          class={styles.heroSlideshow}
-          onTouchStart$={handleTouchStart}
-          onTouchMove$={handleTouchMove}
-          style={
-            {
-              aspectRatio: aspectRatioStyle.value,
-            } as CSSProperties
+          class={
+            images.value.length === 1
+              ? [styles.hero, styles.single]
+              : styles.hero
           }
         >
-          {images.value.length === 1 ? (
-            <img src={images.value[0]} alt={images.value[0]} />
-          ) : (
-            <>
-              {[
-                ...Array(
-                  images.value.length <= 4
-                    ? Math.ceil(6 / images.value.length)
-                    : 1
-                ),
-              ].map((_, repeatIndex) => {
-                return images.value.map((image: string, index: number) => {
-                  return (
-                    <img
-                      src={image}
-                      alt={image}
-                      id={(
-                        (index < 2 ? images.value.length : 0) +
-                        index -
-                        2
-                      ).toString()}
-                      key={repeatIndex + "_" + index}
-                      class={styles.heroSlideshowSlide}
-                    />
-                  );
-                });
-              })}
-            </>
-          )}
-        </div>
-        {images.value.length > 1 && (
-          <div class={styles.heroSlideshowControls}>
-            <div class={styles.heroSlideshowControlsDotsContainer}>
-              <div class={styles.heroSlideshowControlsDots}>
-                {images.value.map((_: any, index: number) => {
-                  return (
-                    <div
-                      class={
-                        index === 0 ? [styles.dot, styles.active] : [styles.dot]
-                      }
-                      key={index}
-                      id={index.toString()}
-                      onClick$={(e: any) => {
-                        clickOnDots(e.target);
-                      }}
-                    ></div>
-                  );
+          <div
+            class={styles.heroSlideshow}
+            onTouchStart$={handleTouchStart}
+            onTouchMove$={handleTouchMove}
+            style={
+              {
+                aspectRatio: aspectRatioStyle.value,
+              } as CSSProperties
+            }
+          >
+            {images.value.length === 1 ? (
+              <img src={images.value[0]} alt={images.value[0]} />
+            ) : (
+              <>
+                {[
+                  ...Array(
+                    images.value.length <= 4
+                      ? Math.ceil(6 / images.value.length)
+                      : 1
+                  ),
+                ].map((_, repeatIndex) => {
+                  return images.value.map((image: string, index: number) => {
+                    return (
+                      <img
+                        src={image}
+                        alt={image}
+                        id={(
+                          (index < 2 ? images.value.length : 0) +
+                          index -
+                          2
+                        ).toString()}
+                        key={repeatIndex + "_" + index}
+                        class={styles.heroSlideshowSlide}
+                      />
+                    );
+                  });
                 })}
+              </>
+            )}
+          </div>
+          {images.value.length > 1 && (
+            <div class={styles.heroSlideshowControls}>
+              <div class={styles.heroSlideshowControlsDotsContainer}>
+                <div class={styles.heroSlideshowControlsDots}>
+                  {images.value.map((_: any, index: number) => {
+                    return (
+                      <div
+                        class={
+                          index === 0
+                            ? [styles.dot, styles.active]
+                            : [styles.dot]
+                        }
+                        key={index}
+                        id={index.toString()}
+                        onClick$={(e: any) => {
+                          clickOnDots(e.target);
+                        }}
+                      ></div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div
+                class={styles.heroSlideshowControlsPlayButton}
+                onClick$={() => {
+                  if (autoplay.value === false) start_autoplay();
+                  else stop_autoplay();
+                }}
+              >
+                {autoplay.value === true ? <BsPause /> : <BsPlay />}
               </div>
             </div>
-            <div
-              class={styles.heroSlideshowControlsPlayButton}
-              onClick$={() => {
-                if (autoplay.value === false) start_autoplay();
-                else stop_autoplay();
-              }}
-            >
-              {autoplay.value === true ? <BsPause /> : <BsPlay />}
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
-  ) : (
-    <>{images.value.length}</>
+          )}
+        </div>
+      </section>
+    )
   );
 });
