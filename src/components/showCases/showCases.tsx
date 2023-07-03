@@ -46,7 +46,7 @@ export default component$(
 
     const jumpToCaseByQuery = $((name: any) => {
       if (name) {
-        const cases = document.querySelectorAll(".case");
+        const cases = document.querySelectorAll(`.${styles.case}`);
         cases.forEach((caseItem) => {
           if (caseItem.querySelector("h3")?.textContent == name) {
             //scroll to case below navigation bar
