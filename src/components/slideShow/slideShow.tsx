@@ -30,11 +30,12 @@ export default component$(({ photos, fullScreenSlideshow }: any) => {
                           if (parent) {
                             parent.classList.remove(styles.active);
                             //scroll to the photo
-                            // parent.scrollTo({
-                            //   top: target.offsetTop,
-                            //   left: 0,
-                            //   behavior: "smooth",
-                            // });
+                            setTimeout(() => {
+                              parent.parentElement?.scrollTo({
+                                top: target.offsetTop - window.innerHeight / 2 + target.offsetHeight ,
+                                behavior: "smooth",
+                              });
+                            }, 1000);
                           }
                         } else {
                           target.classList.add(styles.active);
