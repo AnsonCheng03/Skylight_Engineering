@@ -153,6 +153,8 @@ export default component$(({ photos }: any) => {
     if (changingDot.value) return;
     changingDot.value = true;
 
+    const originalAutoplay = autoplay.value;
+
     if (!xDown.value || !yDown.value) {
       return;
     }
@@ -177,11 +179,52 @@ export default component$(({ photos }: any) => {
       }
 
       //restart autoplay
-      start_autoplay();
+      if (originalAutoplay) start_autoplay();
     }
     /* reset values */
     xDown.value = null;
     yDown.value = null;
+
+    //update changingDot
+    setTimeout(() => {
+      changingDot.value = false;
+    }, 300);
+  });
+
+  const handleDragStart = $((evt: any) => {
+    xDown.value = evt.clientX;
+  });
+
+  const handleDragMove = $((evt: any) => {
+    if (changingDot.value) return;
+    changingDot.value = true;
+
+    const originalAutoplay = autoplay.value;
+
+    if (!xDown.value) return;
+
+    const xUp = evt.clientX;
+    const xDiff = xDown.value - xUp;
+
+    if (Math.abs(xDiff) > 50) {
+      //pause autoplay
+      stop_autoplay();
+
+      /*most significant*/
+      if (xDiff > 0) {
+        /* left swipe */
+        next_slide();
+      } else {
+        /* right swipe */
+        prev_slide();
+      }
+
+      //restart autoplay
+      if (originalAutoplay) start_autoplay();
+    }
+
+    /* reset values */
+    xDown.value = null;
 
     //update changingDot
     setTimeout(() => {
@@ -200,6 +243,8 @@ export default component$(({ photos }: any) => {
           class={styles.heroSlideshow}
           onTouchStart$={handleTouchStart}
           onTouchMove$={handleTouchMove}
+          onMouseDown$={handleDragStart}
+          onMouseUp$={handleDragMove}
           style={
             {
               aspectRatio: aspectRatioStyle.value,
