@@ -16,7 +16,7 @@ export default component$(() => {
         "/Skylight_Engineering/Images.json" +
         "?t=" +
         Date.now(),
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
   });
 

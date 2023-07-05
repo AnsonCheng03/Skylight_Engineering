@@ -72,7 +72,7 @@ export default component$(() => {
             onClick$={() => {
               window.open(
                 "mailto:contact@skylightengineering.com.hk",
-                "_blank"
+                "_blank",
               );
             }}
             q:key="0f_0"
@@ -99,7 +99,7 @@ export default component$(() => {
             onClick$={() => {
               window.open(
                 "https://www.instagram.com/skylight_engg_901/",
-                "_blank"
+                "_blank",
               );
             }}
             q:key="90_0"

@@ -32,9 +32,8 @@ export default component$(({ photos }: any) => {
   //slideshow controls
   const next_slide = $(() => {
     // move the first child in hero-slideshow to the last child
-    const firstChild = document.querySelector(
-      `.${styles.heroSlideshow}`
-    )?.firstElementChild;
+    const firstChild = document.querySelector(`.${styles.heroSlideshow}`)
+      ?.firstElementChild;
     if (firstChild)
       document
         .querySelector(`.${styles.heroSlideshow}`)
@@ -45,12 +44,10 @@ export default component$(({ photos }: any) => {
 
   const prev_slide = $(() => {
     // move the last child in hero-slideshow to the first child
-    const firstChild = document.querySelector(
-      `.${styles.heroSlideshow}`
-    )?.firstElementChild;
-    const lastChild = document.querySelector(
-      `.${styles.heroSlideshow}`
-    )?.lastElementChild;
+    const firstChild = document.querySelector(`.${styles.heroSlideshow}`)
+      ?.firstElementChild;
+    const lastChild = document.querySelector(`.${styles.heroSlideshow}`)
+      ?.lastElementChild;
 
     if (firstChild && lastChild)
       document
@@ -88,7 +85,7 @@ export default component$(({ photos }: any) => {
     //get the id of the active dot
     const activeDot = document.querySelector(`.${styles.active}`);
     const activeDotId = Array.from(dot.parentElement.children).indexOf(
-      activeDot
+      activeDot,
     );
 
     const animationTime = 550;
@@ -99,10 +96,13 @@ export default component$(({ photos }: any) => {
       setTimeout(difference > 0 ? next_slide : prev_slide, animationTime * i);
 
     //restart autoplay and update changingDot
-    setTimeout(() => {
-      if (originalAutoplay) start_autoplay();
-      changingDot.value = false;
-    }, animationTime * Math.abs(difference));
+    setTimeout(
+      () => {
+        if (originalAutoplay) start_autoplay();
+        changingDot.value = false;
+      },
+      animationTime * Math.abs(difference),
+    );
   });
 
   useVisibleTask$(({ track }: any) => {
@@ -110,13 +110,16 @@ export default component$(({ photos }: any) => {
       photos.value;
     });
 
-    images.value = photos.value.flatMap((photo: any) =>
-      photo.Slideshow?.map((slide: any) => photo.path + "/" + slide)
+    images.value = photos.value.flatMap(
+      (photo: any) =>
+        photo.Slideshow?.map((slide: any) => photo.path + "/" + slide),
     );
 
     // remove all intervals when load
-    const interval_id = window.setInterval(function () {},
-    Number.MAX_SAFE_INTEGER);
+    const interval_id = window.setInterval(
+      function () {},
+      Number.MAX_SAFE_INTEGER,
+    );
     if (interval_id)
       for (let i = 1; i < interval_id; i++) {
         window.clearInterval(i);
@@ -259,7 +262,7 @@ export default component$(({ photos }: any) => {
                 ...Array(
                   images.value.length <= 4
                     ? Math.ceil(6 / images.value.length)
-                    : 1
+                    : 1,
                 ),
               ].map((_, repeatIndex) => {
                 return images.value.map((image: string, index: number) => {
