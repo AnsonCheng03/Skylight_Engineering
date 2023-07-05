@@ -9,23 +9,23 @@ export default component$(() => {
       <div class={styles.hamburger}>
         <div class={styles.bar}></div>
       </div>
-      <Link href="/Skylight_Engineering/">
+      <Link href="/">
         <h1 class={styles.icon}>Skylight</h1>
       </Link>
       <div class={styles.blur}></div>
       <ul class={styles.menu}>
         <li class={styles.menuItem}>
-          <Link href={"/Skylight_Engineering/"} class={styles.link}>
+          <Link href={"/"} class={styles.link}>
             首頁
           </Link>
         </li>
         <li class={styles.menuItem}>
-          <Link href={"/Skylight_Engineering/example"} class={styles.link}>
+          <Link href={"/example"} class={styles.link}>
             裝修案例
           </Link>
         </li>
         <li class={styles.menuItem}>
-          <Link href={"/Skylight_Engineering/contact"} class={styles.link}>
+          <Link href={"/contact"} class={styles.link}>
             聯絡我們
           </Link>
         </li>
