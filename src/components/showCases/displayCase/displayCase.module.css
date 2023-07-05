@@ -39,6 +39,7 @@
 
 .case .photoSelector .background {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16 / 9;
 }
 
 .case .photoSelector .cover {
@@ -46,7 +47,7 @@
   top: 0;
   left: 0;
   width: 50%;
-  height: 25%;
+  height: 15%;
   padding: 25% 25%;
   border-radius: 5px;
   object-fit: cover;
