@@ -36,6 +36,139 @@
   object-fit: cover;
   border-radius: 5px;
 }
+/* Case Display */
+.displayCase {
+  grid-column: 2 / -1;
+  max-width: 100%;
+}
+
+.case {
+  border-radius: 5px;
+  background-color: #fff;
+  align-items: center;
+  padding: 15px 30px 30px 30px;
+  margin-bottom: 30px;
+  border: 2px solid transparent;
+}
+
+.case h3 {
+  margin: 15px 0;
+  font-size: 1.5em;
+}
+
+.caseDetails {
+  padding: 0 10px 0 30px;
+}
+
+.case .photoSelector {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  aspect-ratio: 1.618;
+  justify-content: center;
+  align-items: center;
+}
+
+.case .photoSelector img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.case .photoSelector .background {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.case .photoSelector .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 15%;
+  padding: 25% 25%;
+  border-radius: 5px;
+  object-fit: cover;
+  background-color: #fff;
+  opacity: 60%;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+.case .photoSelector:hover > .cover {
+  opacity: 90%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.case .sharingButton,
+.case .quotationButton {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: #e6e6eb;
+  border-radius: 5px;
+  color: #222;
+  white-space: nowrap;
+  padding: 9px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.case .quotationButton {
+  width: max-content;
+  height: 40px;
+  aspect-ratio: unset;
+  font-size: 15px;
+  padding: 9px 15px;
+}
+
+.case .sharingButton .buttonImage {
+  width: 100%;
+  scale: 1.1;
+}
+
+.case .sharingButton:hover {
+  background-color: #d9d9e0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cases {
+    display: block;
+  }
+
+  .selectCase {
+    margin-bottom: 30px;
+    width: 100%;
+    overflow: scroll;
+    position: unset;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .selectCase .container {
+    width: max-content;
+    min-width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fff;
+  }
+
+  .selectCase .caseType {
+    min-width: 20vw;
+    text-align: center;
+  }
+
+  .selectCase .caseType .caseTypeNavigation {
+    display: none !important;
+  }
+}
 
 .case .photoSelector .background {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
